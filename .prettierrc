@@ -12,10 +12,7 @@
   "bracketSameLine": false,
   "endOfLine": "lf",
   "proseWrap": "preserve",
-  "plugins": [
-    "@trivago/prettier-plugin-sort-imports",
-    "prettier-plugin-tailwindcss"
-  ],
+  "plugins": ["@trivago/prettier-plugin-sort-imports", "prettier-plugin-tailwindcss"],
   "importOrder": [
     "^react$",
     "^react-dom$",

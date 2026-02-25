@@ -1,20 +1,20 @@
-import { ReactNode } from "react";
+import { ReactNode } from 'react';
 
-import { Geist } from "next/font/google";
+import { Metadata } from 'next';
+import { Geist } from 'next/font/google';
 
-import "@irikomg/ui/globals.css";
+import '@irikomg/ui/globals.css';
 
-import { Providers } from "@/components/providers";
-import { Metadata } from "next";
+import { Providers } from '@/components/providers';
 
 const fontSans = Geist({
-  subsets: ["latin"],
-  variable: "--font-sans",
+  subsets: ['latin'],
+  variable: '--font-sans',
 });
 
 export const metadata: Metadata = {
-  title: "Iriko",
-  description: "Iriko.mg - Iriko.mg",
+  title: 'Iriko',
+  description: 'Iriko.mg - Iriko.mg',
 };
 
 export default function RootLayout({

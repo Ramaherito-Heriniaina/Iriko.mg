@@ -1,31 +1,20 @@
-import { ReactNode } from 'react';
-
-import { Metadata } from 'next';
-import { Geist } from 'next/font/google';
-
-import '@irikomg/ui/globals.css';
-
-import { Providers } from '@/components/providers';
-
-const fontSans = Geist({
-  subsets: ['latin'],
-  variable: '--font-sans',
-});
-
-export const metadata: Metadata = {
-  title: 'Iriko',
-  description: 'Iriko.mg - Iriko.mg',
-};
+import Navbar from '../components/navbar';
+import Footer from '../components/footer';
+import './globals.css'; 
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: ReactNode;
-}>) {
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={`${fontSans.variable} antialiased`}>
-        <Providers>{children}</Providers>
+    <html lang="fr">
+      <body>
+        <Navbar />
+        <main className="min-h-screen">
+          {children}
+        </main>
+        <Footer />
       </body>
     </html>
   );

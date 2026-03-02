@@ -1,1 +1,1 @@
-export { default } from "@irikomg/ui/postcss.config";
+export { default } from '@irikomg/ui/postcss.config';

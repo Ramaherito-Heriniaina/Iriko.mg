@@ -16,7 +16,7 @@ const navItems = [
   { label: 'LEMA', href: '/lema' },
 ];
 
-export default function Navbar() {
+export function Navbar() {
   const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -33,7 +33,6 @@ export default function Navbar() {
         <div
           className={`flex items-center justify-between rounded-2xl border border-white/10 bg-green-900/90 shadow-2xl backdrop-blur-md transition-all duration-500 ease-in-out ${isScrolled ? 'px-6 py-2 shadow-green-900/20' : 'px-8 py-4'} `}
         >
-          {/* --- LOGO --- */}
           <Link href="/" className="group relative flex items-center">
             <div className="relative transition-transform duration-500 group-hover:scale-105">
               <Image
@@ -46,8 +45,6 @@ export default function Navbar() {
               />
             </div>
           </Link>
-
-          {/* --- MENU DESKTOP --- */}
           <ul className="hidden items-center gap-1 lg:flex">
             {navItems.map((item) => {
               const isActive = pathname === item.href;
@@ -68,24 +65,18 @@ export default function Navbar() {
               );
             })}
           </ul>
-
-          {/* --- ACTIONS --- */}
           <div className="flex items-center gap-4">
             <Link
               href="/contact"
               className="group relative hidden items-center gap-2 overflow-hidden rounded-xl border border-white/10 bg-white/5 px-6 py-2.5 text-xs font-semibold text-white transition-all duration-500 hover:border-green-400/50 hover:shadow-[0_0_15px_rgba(74,222,128,0.2)] active:scale-95 md:flex lg:text-sm"
             >
-              {/* Effet de brillance au survol */}
-              <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/10 to-transparent group-hover:animate-[shimmer_1.5s_infinite]" />
-
+              <div className="absolute inset-0 -translate-x-full bg-linear-to-r from-transparent via-white/10 to-transparent group-hover:animate-[shimmer_1.5s_infinite]" />
               <span>Contact</span>
               <Send
                 size={14}
                 className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
               />
             </Link>
-
-            {/* BOUTON MOBILE */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="rounded-lg p-2 text-green-100 transition-colors hover:bg-white/10 lg:hidden"
@@ -94,8 +85,6 @@ export default function Navbar() {
             </button>
           </div>
         </div>
-
-        {/* --- MENU MOBILE --- */}
         <div
           className={`absolute top-full right-4 left-4 mt-2 overflow-hidden rounded-2xl border border-white/10 bg-green-950/95 shadow-2xl backdrop-blur-xl transition-all duration-300 ease-in-out lg:hidden ${isMobileMenuOpen ? 'translate-y-0 opacity-100' : 'pointer-events-none -translate-y-4 opacity-0'} `}
         >

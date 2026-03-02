@@ -1,12 +1,13 @@
+import { ReactNode } from 'react';
+
 import '@irikomg/ui/globals.css';
 
-import Footer from '../components/footer';
-import Navbar from '../components/navbar';
+import { Footer, Navbar } from '@/components/shared';
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: ReactNode;
 }>) {
   return (
     <html lang="fr">

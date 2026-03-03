@@ -65,7 +65,6 @@ export function Navbar() {
             <li key={item.href}>
               <NavLink
                 item={item}
-                locale={locale}
                 isActive={pathnameWithoutLocale === item.href}
                 isScrolled={isScrolled}
               />
@@ -91,7 +90,6 @@ export function Navbar() {
       <MobileMenu
         isOpen={isMobileMenuOpen}
         items={navItems}
-        locale={locale}
         pathnameWithoutLocale={pathnameWithoutLocale}
         onClose={closeMobileMenu}
       />

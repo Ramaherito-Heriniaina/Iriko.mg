@@ -6,15 +6,14 @@ import { getNavLinkClass } from './helpers';
 
 interface NavLinkProps {
   item: NavItem;
-  locale: string;
   isActive: boolean;
   isScrolled: boolean;
   onClick?: () => void;
 }
 
-export function NavLink({ item, locale, isActive, isScrolled, onClick }: Readonly<NavLinkProps>) {
+export function NavLink({ item, isActive, isScrolled, onClick }: Readonly<NavLinkProps>) {
   return (
-    <Link href={`/${locale}${item.href}`} onClick={onClick} className={getNavLinkClass(isScrolled, isActive)}>
+    <Link href={`${item.href}`} onClick={onClick} className={getNavLinkClass(isScrolled, isActive)}>
       {item.label}
       {isActive && (
         <span

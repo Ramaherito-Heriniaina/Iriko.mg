@@ -7,12 +7,11 @@ import { NavItem } from '@/hooks/use-nav';
 interface MobileMenuProps {
   isOpen: boolean;
   items: NavItem[];
-  locale: string;
   pathnameWithoutLocale: string;
   onClose: () => void;
 }
 
-export function MobileMenu({ isOpen, items, locale, pathnameWithoutLocale, onClose }: Readonly<MobileMenuProps>) {
+export function MobileMenu({ isOpen, items, pathnameWithoutLocale, onClose }: Readonly<MobileMenuProps>) {
   return (
     <AnimatePresence>
       {isOpen && (
@@ -27,7 +26,7 @@ export function MobileMenu({ isOpen, items, locale, pathnameWithoutLocale, onClo
             {items.map((item) => (
               <Link
                 key={item.href}
-                href={`/${locale}${item.href}`}
+                href={`${item.href}`}
                 onClick={onClose}
                 className={`py-2 text-sm font-medium transition-colors ${
                   pathnameWithoutLocale === item.href ? 'text-green-700' : 'text-gray-700 hover:text-green-700'

@@ -4,11 +4,11 @@ import { Dictionary } from '@/i18n/dictionaries/fr';
 
 const buildNavItems = (dictionary: Dictionary): NavItem[] => [
   { label: dictionary.nav.home, href: '/' },
-  { label: dictionary.nav.services, href: '/services' },
-  { label: dictionary.nav.agrobusiness, href: '/agrobusiness' },
-  { label: dictionary.nav.rse, href: '/rse' },
-  { label: dictionary.nav.lema, href: '/lema' },
-  { label: dictionary.nav.contact, href: '/contact' },
+  { label: dictionary.nav.services, href: '#services' },
+  { label: dictionary.nav.agrobusiness, href: '#agrobusiness' },
+  { label: dictionary.nav.rse, href: '#rse' },
+  { label: dictionary.nav.lema, href: '#lema' },
+  { label: dictionary.nav.contact, href: '#contact' },
 ];
 
 const getNavLinkClass = (isScrolled: boolean, isActive: boolean): string => {

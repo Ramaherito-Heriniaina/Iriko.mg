@@ -20,7 +20,7 @@ export function FormationSection() {
   const { formation } = dictionary;
 
   return (
-    <section id="formation" className="bg-background py-24">
+    <section id="services" className="bg-background py-24">
       <div className="container mx-auto px-6">
         <div className="grid items-center gap-16 lg:grid-cols-2">
           <ScrollReveal>

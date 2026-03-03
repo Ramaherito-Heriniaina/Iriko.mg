@@ -16,7 +16,7 @@ const raleway = Raleway({
 });
 
 export const metadata: Metadata = {
-  title: 'Iriko.mg - Sustainable Malagasy Enterprise',
+  title: 'Iriko.mg - Vokatra tsara no tanjonay',
   description:
     'Welcome to Iriko.mg, the official site of our Malagasy company founded in 2022, dedicated to sustainable development, quality, and promoting local expertise.',
 };

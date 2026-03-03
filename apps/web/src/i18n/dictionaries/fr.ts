@@ -7,6 +7,15 @@ export const fr = {
     lema: 'LEMA',
     contact: 'Contact',
   },
+  hero: {
+    tagline: 'Vokatra tsara no tanjonay',
+    title_line1: 'Développement durable,',
+    title_line2: 'excellence locale',
+    description:
+      "Iriko.mg est une entreprise malgache engagée dans la promotion du développement durable, l'autonomisation des communautés et la valorisation du savoir-faire local.",
+    cta_primary: 'Découvrir LEMA',
+    cta_secondary: 'Nos services',
+  },
   footer: {
     tagline: '« Vokatra Tsara no tanjonay »',
     mission:

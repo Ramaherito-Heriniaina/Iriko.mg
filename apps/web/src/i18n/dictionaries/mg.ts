@@ -9,6 +9,15 @@ export const mg: Dictionary = {
     lema: 'LEMA',
     contact: 'Fifandraisana',
   },
+  hero: {
+    tagline: 'Vokatra tsara no tanjonay',
+    title_line1: 'Fampandrosoana maharitra,',
+    title_line2: 'fahaiza-manao eo an-toerana',
+    description:
+      "Iriko.mg dia orinasa malagasy mirona amin'ny fampandrosoana maharitra, ny fisian-tenan'ny vondron'olona ary ny fampiroboroboana ny fahaiza-manao eo an-toerana.",
+    cta_primary: 'Hijery LEMA',
+    cta_secondary: 'Ny toloranay',
+  },
   footer: {
     tagline: '« Vokatra Tsara no tanjonay »',
     mission:

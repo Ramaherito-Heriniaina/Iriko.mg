@@ -5,7 +5,17 @@ import Image from 'next/image';
 import { ArrowDown } from 'lucide-react';
 import { motion } from 'motion/react';
 
+import { useDictionary } from '@/hooks/use-dictionary';
+
+import { Dictionary } from '@/i18n/dictionaries/fr';
+
 export function HeroSection() {
+  const { dictionary } = useDictionary<Dictionary>();
+
+  if (!dictionary) return null;
+
+  const { hero } = dictionary;
+
   return (
     <section id="accueil" className="relative flex min-h-screen items-center justify-center overflow-hidden">
       <div className="absolute inset-0">
@@ -20,7 +30,7 @@ export function HeroSection() {
           className="mb-6 text-sm font-medium tracking-[0.3em] uppercase md:text-base"
           style={{ color: 'var(--lema-foreground)', opacity: 0.7 }}
         >
-          Vokatra tsara no tanjonay
+          {hero.tagline}
         </motion.p>
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
@@ -28,9 +38,9 @@ export function HeroSection() {
           transition={{ delay: 0.5, duration: 0.7 }}
           className="text-primary-foreground mb-6 text-4xl leading-tight font-bold md:text-6xl lg:text-7xl"
         >
-          Développement durable,
+          {hero.title_line1}
           <br />
-          <span className="text-gradient-golden inline-block">excellence locale</span>
+          <span className="text-gradient-golden inline-block">{hero.title_line2}</span>
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -38,8 +48,7 @@ export function HeroSection() {
           transition={{ delay: 0.7, duration: 0.6 }}
           className="text-primary-foreground/80 mx-auto mb-10 max-w-2xl text-lg leading-relaxed font-light md:text-xl"
         >
-          Iriko.mg est une entreprise malgache engagée dans la promotion du développement durable, l&apos;autonomisation
-          des communautés et la valorisation du savoir-faire local.
+          {hero.description}
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -51,13 +60,13 @@ export function HeroSection() {
             href="#lema"
             className="bg-gradient-lema text-primary-foreground shadow-lema inline-flex items-center justify-center rounded-full px-8 py-4 text-sm font-semibold tracking-wide transition-opacity hover:opacity-90"
           >
-            Découvrir LEMA
+            {hero.cta_primary}
           </a>
           <a
             href="#formation"
             className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 inline-flex items-center justify-center rounded-full border px-8 py-4 text-sm font-medium tracking-wide transition-colors"
           >
-            Nos services
+            {hero.cta_secondary}
           </a>
         </motion.div>
       </div>

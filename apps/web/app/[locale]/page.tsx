@@ -1,5 +1,12 @@
-import { HeroSection } from '@/components/landing';
+import { Fragment } from 'react';
+
+import { FormationSection, HeroSection } from '@/components/landing';
 
 export default function HomePage() {
-  return <HeroSection />;
+  return (
+    <Fragment>
+      <HeroSection />
+      <FormationSection />
+    </Fragment>
+  );
 }

@@ -28,10 +28,21 @@ export function Navbar() {
   }, []);
 
   return (
-    <nav className={`fixed top-0 right-0 left-0 z-50 transition-all duration-500 ${isScrolled ? 'pt-2' : 'pt-6'}`}>
+    <nav
+      className="fixed top-0 right-0 left-0 z-50 transition-all duration-500"
+      style={{ paddingTop: isScrolled ? 'var(--navbar-pt-scrolled)' : 'var(--navbar-pt-default)' }}
+    >
       <div className="mx-auto max-w-7xl px-4 md:px-6">
         <div
-          className={`flex items-center justify-between rounded-2xl border border-white/10 bg-green-900/90 shadow-2xl backdrop-blur-md transition-all duration-500 ease-in-out ${isScrolled ? 'px-6 py-2 shadow-green-900/20' : 'px-8 py-4'} `}
+          className="flex items-center justify-between rounded-2xl border backdrop-blur-md transition-all duration-500 ease-in-out"
+          style={{
+            borderColor: 'var(--navbar-border)',
+            background: 'var(--navbar-bg)',
+            boxShadow: 'var(--navbar-shadow)',
+            padding: isScrolled
+              ? 'var(--navbar-py-scrolled) var(--navbar-px-scrolled)'
+              : 'var(--navbar-py-default) var(--navbar-px-default)',
+          }}
         >
           <Link href="/" className="group relative flex items-center">
             <div className="relative transition-transform duration-500 group-hover:scale-105">
@@ -52,13 +63,25 @@ export function Navbar() {
                 <li key={item.href} className="group/item">
                   <Link
                     href={item.href}
-                    className={`relative rounded-lg px-4 py-2 text-sm font-medium tracking-wide transition-all duration-300 ${isActive ? 'text-white' : 'text-green-100/70 hover:text-white'} `}
+                    className="relative rounded-lg px-4 py-2 text-sm font-medium tracking-wide transition-all duration-300"
+                    style={{
+                      color: isActive ? 'var(--navbar-link-active)' : 'var(--navbar-link-default)',
+                    }}
                   >
                     {item.label}
                     {isActive ? (
-                      <span className="absolute right-4 bottom-0 left-4 h-0.5 rounded-full bg-green-400 shadow-[0_0_8px_rgba(74,222,128,0.6)]" />
+                      <span
+                        className="absolute right-4 bottom-0 left-4 h-0.5 rounded-full"
+                        style={{
+                          background: 'var(--navbar-indicator)',
+                          boxShadow: 'var(--navbar-indicator-glow)',
+                        }}
+                      />
                     ) : (
-                      <span className="absolute bottom-0 left-1/2 h-0.5 w-0 rounded-full bg-green-400/40 transition-all duration-300 group-hover/item:right-4 group-hover/item:left-4 group-hover/item:w-auto" />
+                      <span
+                        className="absolute bottom-0 left-1/2 h-0.5 w-0 rounded-full transition-all duration-300 group-hover/item:right-4 group-hover/item:left-4 group-hover/item:w-auto"
+                        style={{ background: 'var(--navbar-indicator-hover)' }}
+                      />
                     )}
                   </Link>
                 </li>
@@ -68,7 +91,12 @@ export function Navbar() {
           <div className="flex items-center gap-4">
             <Link
               href="/contact"
-              className="group relative hidden items-center gap-2 overflow-hidden rounded-xl border border-white/10 bg-white/5 px-6 py-2.5 text-xs font-semibold text-white transition-all duration-500 hover:border-green-400/50 hover:shadow-[0_0_15px_rgba(74,222,128,0.2)] active:scale-95 md:flex lg:text-sm"
+              className="group relative hidden items-center gap-2 overflow-hidden rounded-xl border px-6 py-2.5 text-xs font-semibold transition-all duration-500 active:scale-95 md:flex lg:text-sm"
+              style={{
+                borderColor: 'var(--navbar-cta-border)',
+                background: 'var(--navbar-cta-bg)',
+                color: 'var(--navbar-cta-text)',
+              }}
             >
               <div className="absolute inset-0 -translate-x-full bg-linear-to-r from-transparent via-white/10 to-transparent group-hover:animate-[shimmer_1.5s_infinite]" />
               <span>Contact</span>
@@ -79,14 +107,22 @@ export function Navbar() {
             </Link>
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="rounded-lg p-2 text-green-100 transition-colors hover:bg-white/10 lg:hidden"
+              className="rounded-lg p-2 transition-colors hover:bg-white/10 lg:hidden"
+              style={{ color: 'var(--navbar-mobile-icon)' }}
             >
               {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
             </button>
           </div>
         </div>
         <div
-          className={`absolute top-full right-4 left-4 mt-2 overflow-hidden rounded-2xl border border-white/10 bg-green-950/95 shadow-2xl backdrop-blur-xl transition-all duration-300 ease-in-out lg:hidden ${isMobileMenuOpen ? 'translate-y-0 opacity-100' : 'pointer-events-none -translate-y-4 opacity-0'} `}
+          className={`absolute top-full right-4 left-4 mt-2 overflow-hidden rounded-2xl border backdrop-blur-xl transition-all duration-300 ease-in-out lg:hidden ${
+            isMobileMenuOpen ? 'translate-y-0 opacity-100' : 'pointer-events-none -translate-y-4 opacity-0'
+          }`}
+          style={{
+            borderColor: 'var(--navbar-border)',
+            background: 'var(--navbar-mobile-bg)',
+            boxShadow: 'var(--navbar-shadow)',
+          }}
         >
           <div className="flex flex-col gap-2 p-4">
             {[...navItems, { label: 'Contact', href: '/contact' }].map((item) => (
@@ -94,10 +130,15 @@ export function Navbar() {
                 key={item.href}
                 href={item.href}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="group flex items-center justify-between rounded-xl p-3 text-green-50 hover:bg-white/5"
+                className="group flex items-center justify-between rounded-xl p-3 hover:bg-white/5"
+                style={{ color: 'var(--navbar-mobile-link)' }}
               >
                 <span className="font-medium">{item.label}</span>
-                <ChevronRight size={16} className="text-green-500 transition-transform group-hover:translate-x-1" />
+                <ChevronRight
+                  size={16}
+                  className="transition-transform group-hover:translate-x-1"
+                  style={{ color: 'var(--navbar-indicator)' }}
+                />
               </Link>
             ))}
           </div>

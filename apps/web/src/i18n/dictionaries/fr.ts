@@ -16,6 +16,30 @@ export const fr = {
     cta_primary: 'Découvrir LEMA',
     cta_secondary: 'Nos services',
   },
+  formation: {
+    label: 'Nos services',
+    title: 'Formation & Animation',
+    description:
+      "Nous proposons une gamme complète de services pour le développement personnel, professionnel et la cohésion d'équipe.",
+    services: [
+      {
+        title: 'Team Building',
+        desc: 'Activités de cohésion pour ONG, entreprises et familles, favorisant collaboration et leadership.',
+      },
+      {
+        title: 'Animation Événementielle',
+        desc: 'Animation personnalisée de mariages, baptêmes et fêtes, intégrant la culture malgache.',
+      },
+      {
+        title: 'Formation Professionnelle',
+        desc: 'Programmes en entrepreneuriat, leadership, gestion de projets et création de coopératives.',
+      },
+      {
+        title: 'Coaching Personnalisé',
+        desc: "Accompagnement individuel ou en groupe pour l'orientation scolaire et la carrière.",
+      },
+    ],
+  },
   footer: {
     tagline: '« Vokatra Tsara no tanjonay »',
     mission:

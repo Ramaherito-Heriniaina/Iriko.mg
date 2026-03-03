@@ -18,6 +18,30 @@ export const mg: Dictionary = {
     cta_primary: 'Hijery LEMA',
     cta_secondary: 'Ny toloranay',
   },
+  formation: {
+    label: 'Ny tolorantsika',
+    title: 'Fampiofanana & Fampiharana',
+    description:
+      "Manolotra tolotra feno izahay ho an'ny fampandrosoana manokana, matihanina ary ny firaisankina ao anatin'ny ekipa.",
+    services: [
+      {
+        title: 'Fiaraha-miasa',
+        desc: "Hetsika firaisankina ho an'ny fikambanana, orinasa ary fianakaviana, mampiroborobo ny fiaraha-miasa sy ny fitarihana.",
+      },
+      {
+        title: 'Fanomanana Hetsika',
+        desc: 'Fanomanana manokana ny mariazy, batisa ary fetim-pifaliana, mampiditra ny kolontsaina malagasy.',
+      },
+      {
+        title: 'Fampiofanana Matihanina',
+        desc: "Fandaharana amin'ny fandraharahana, fitarihana, fitantanana tetikasa ary famoronana kooperativa.",
+      },
+      {
+        title: 'Fanofanana Manokana',
+        desc: "Fanarahamaso tsirairay na antokon'olona ho an'ny fitondrana ara-pianariana sy ny asa.",
+      },
+    ],
+  },
   footer: {
     tagline: '« Vokatra Tsara no tanjonay »',
     mission:

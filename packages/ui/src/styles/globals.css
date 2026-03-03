@@ -81,32 +81,32 @@
   --navbar-mobile-icon: oklch(0.91 0.01 85);
   --navbar-mobile-link: oklch(0.97 0.01 85);
 
-  --footer-bg-from: oklch(0.14 0.02 60);
-  --footer-bg-to: oklch(0.1 0.01 60);
+  --footer-bg-from: oklch(0.18 0.06 145);
+  --footer-bg-to: oklch(0.12 0.04 145);
   --footer-text: oklch(0.91 0.01 85 / 0.9);
-  --footer-border: oklch(1 0 0 / 0.05);
+  --footer-border: oklch(1 0 0 / 0.07);
 
-  --footer-glow-primary: oklch(0.75 0.13 80 / 0.1);
-  --footer-glow-secondary: oklch(0.75 0.13 80 / 0.05);
-  --footer-line-glow: oklch(0.75 0.13 80 / 0.3);
-  --footer-divider: oklch(0.75 0.13 80 / 0.3);
+  --footer-glow-primary: oklch(0.55 0.1 160 / 0.15);
+  --footer-glow-secondary: oklch(0.38 0.1 145 / 0.1);
+  --footer-line-glow: oklch(0.55 0.1 160 / 0.4);
+  --footer-divider: oklch(0.55 0.1 160 / 0.35);
 
-  --footer-tagline: oklch(0.75 0.13 80 / 0.5);
+  --footer-tagline: oklch(0.65 0.1 155 / 0.7);
   --footer-body: oklch(0.97 0.01 85 / 0.8);
-  --footer-muted: oklch(0.75 0.13 80 / 0.3);
+  --footer-muted: oklch(0.55 0.1 160 / 0.4);
 
-  --footer-icon-bg: oklch(0.75 0.13 80 / 0.1);
-  --footer-icon-border: oklch(0.75 0.13 80 / 0.2);
-  --footer-icon-color: oklch(0.75 0.13 80);
+  --footer-icon-bg: oklch(0.55 0.1 160 / 0.12);
+  --footer-icon-border: oklch(0.55 0.1 160 / 0.25);
+  --footer-icon-color: oklch(0.65 0.1 155);
 
   --footer-contact-text: oklch(0.91 0.01 85 / 0.8);
-  --footer-hover-bg: oklch(1 0 0 / 0.02);
+  --footer-hover-bg: oklch(0.55 0.1 160 / 0.05);
 
-  --footer-logo-glow: drop-shadow(0 0 10px oklch(0.75 0.13 80 / 0.15));
+  --footer-logo-glow: drop-shadow(0 0 12px oklch(0.55 0.1 160 / 0.2));
 }
 
 .dark {
-  --background: oklch(0.18 0.02 60);
+  --background: oklch(0.12 0.04 145);
   --foreground: oklch(0.97 0.01 85);
 
   --card: oklch(0.18 0.02 60);

@@ -5,8 +5,6 @@ import { Raleway } from 'next/font/google';
 
 import '@irikomg/ui/globals.css';
 
-import { Footer, Navbar } from '@/components/shared';
-
 import { Providers } from '@/providers/providers';
 
 const raleway = Raleway({
@@ -29,11 +27,7 @@ export default function RootLayout({
   return (
     <html lang="fr" suppressHydrationWarning>
       <body className={`${raleway.className} antialiased`}>
-        <Providers>
-          <Navbar />
-          <main className="min-h-screen">{children}</main>
-          <Footer />
-        </Providers>
+        <Providers>{children}</Providers>
       </body>
     </html>
   );

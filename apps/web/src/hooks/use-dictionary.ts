@@ -8,13 +8,13 @@ import { getDictionary, Locale } from '@/i18n';
 
 export function useDictionary<T>() {
   const pathname = usePathname();
-  const lang = pathname.split('/')[1] as Locale;
+  const locale = pathname.split('/')[1] as Locale;
 
   const [dictionary, setDictionary] = useState<T | null>(null);
 
   useEffect(() => {
-    getDictionary(lang).then((dict) => setDictionary(dict as T));
-  }, [lang]);
+    getDictionary(locale).then((dict) => setDictionary(dict as T));
+  }, [locale]);
 
-  return { dictionary, lang };
+  return { dictionary, locale };
 }

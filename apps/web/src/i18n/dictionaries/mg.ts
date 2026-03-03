@@ -1,4 +1,3 @@
-// dictionaries/mg.ts
 import { Dictionary } from './fr';
 
 export const mg: Dictionary = {
@@ -9,5 +8,16 @@ export const mg: Dictionary = {
     rse: 'RSE Iriko',
     lema: 'LEMA',
     contact: 'Fifandraisana',
+  },
+  footer: {
+    tagline: '« Vokatra Tsara no tanjonay »',
+    mission:
+      "Mampiroborobo ny fampandrosoana maharitra, ny fisian-tenan'ny vondron'olona ary ny fizahan-tany misy fiambenana eto Madagasikara.",
+    address: {
+      street: 'Lot A 17 F, Ambohitrarahaba',
+      city: 'Antananarivo 103',
+    },
+    copyright: 'Fahendrena & Maharitra',
+    tags: ['Madagasikara', 'Fizahan-tany'],
   },
 };

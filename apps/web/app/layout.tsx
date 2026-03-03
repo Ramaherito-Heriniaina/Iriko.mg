@@ -1,20 +1,24 @@
 import { ReactNode } from 'react';
 
 import { Metadata } from 'next';
-import { Geist } from 'next/font/google';
+import { Raleway } from 'next/font/google';
 
 import '@irikomg/ui/globals.css';
 
-import { Providers } from '@/components/providers';
+import { Footer, Navbar } from '@/components/shared';
 
-const fontSans = Geist({
+import { Providers } from '@/providers/providers';
+
+const raleway = Raleway({
   subsets: ['latin'],
-  variable: '--font-sans',
+  display: 'swap',
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
 });
 
 export const metadata: Metadata = {
-  title: 'Iriko',
-  description: 'Iriko.mg - Iriko.mg',
+  title: 'Iriko.mg - Sustainable Malagasy Enterprise',
+  description:
+    'Welcome to Iriko.mg, the official site of our Malagasy company founded in 2022, dedicated to sustainable development, quality, and promoting local expertise.',
 };
 
 export default function RootLayout({
@@ -23,9 +27,13 @@ export default function RootLayout({
   children: ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={`${fontSans.variable} antialiased`}>
-        <Providers>{children}</Providers>
+    <html lang="fr" suppressHydrationWarning>
+      <body className={`${raleway.className} antialiased`}>
+        <Providers>
+          <Navbar />
+          <main className="min-h-screen">{children}</main>
+          <Footer />
+        </Providers>
       </body>
     </html>
   );

@@ -1,4 +1,5 @@
 'use client';
+import { useState } from 'react';
 import { Beef, MapPin, Sprout, UtensilsCrossed, Store } from 'lucide-react';
 import { useDictionary } from '@/hooks/use-dictionary';
 import { Dictionary } from '@/i18n/dictionaries/fr';
@@ -6,18 +7,31 @@ import Image from 'next/image';
 
 const ICONS = [Beef, MapPin, Sprout, UtensilsCrossed, Store];
 
+const SERVICE_IMAGES = [
+    "/image/porcine-power.png",
+    "/image/tag-discovery.png",
+    "/image/production-locale.png",
+    "/image/transformation.png",
+    "/image/viande.png",
+];
+
 export function AgrobusinessSection() {
     const { dictionary } = useDictionary<Dictionary>();
+    
+    const DEFAULT_IMAGE = "/image/iriko_logo-removebg-preview.png";
+    const [activeImage, setActiveImage] = useState(DEFAULT_IMAGE);
+
     if (!dictionary) return null;
 
     const services = Object.values(dictionary.agrobusiness.services);
 
+    const isDefault = activeImage === DEFAULT_IMAGE;
+
     return (
         <section className="py-24 px-6 max-w-7xl mx-auto">
-
+            
             <div className="text-center mb-32 px-4">
-
-                <h2 className="text-5xl md:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-green-700 to-emerald-500 tracking-tight mb-6">
+                 <h2 className="text-5xl md:text-4xl font-extrabold text-black tracking-tight mb-6">
                     {dictionary.agrobusiness.title}
                 </h2>
 
@@ -25,23 +39,33 @@ export function AgrobusinessSection() {
                     {dictionary.agrobusiness.description}
                 </p>
 
-                <div className="w-24 h-1.5 bg-green-500 mx-auto mt-8 rounded-full"></div>
+                <div className="w-24 h-1.5 bg-black mx-auto mt-8 rounded-full"></div>
             </div>
 
             <div className="relative flex justify-center items-center h-[1000px]">
-
-                <div className="relative w-110 h-110 rounded-full overflow-hidden border-[8px] border-white shadow-2xl z-10">
+               
+                <div className="relative w-96 h-96 rounded-full overflow-hidden border-[8px] border-white shadow-2xl z-10 bg-white flex justify-center items-center">
                     <Image
-                        src="/image/agrobusiness.png"
+                        key={activeImage} 
+                        src={activeImage}
                         fill
-                        className="object-cover"
-                        alt="Agrobusiness"
+                        className={`transition-all duration-500 animate-in fade-in zoom-in 
+                            ${isDefault ? 'object-contain p-16' : 'object-cover p-0'}`}
+                        style={{animation: 'imageTransition 0.6s ease-out'}}
+                        alt="Iriko Content"
                     />
+
+                    <style jsx>{`
+                        @keyframes imageTransition {
+                            from { opacity: 0; transform: scale(0.9) rotate(-3deg); }
+                            to { opacity: 1; transform: scale(1) rotate(0deg); }
+                        }
+                    `}</style>
                 </div>
 
                 {services.map((service, i) => {
                     const angle = (i * (360 / 5) - 90) * (Math.PI / 180);
-                    const radius = 420;
+                    const radius = 400;
                     const x = Math.cos(angle) * radius;
                     const y = Math.sin(angle) * radius;
                     const Icon = ICONS[i];
@@ -49,20 +73,25 @@ export function AgrobusinessSection() {
                     return (
                         <div
                             key={i}
-                            className="absolute transition-all duration-500 hover:scale-105 w-80 text-center"
+                            className="absolute transition-all duration-500 hover:scale-110 w-80 text-center group cursor-pointer"
                             style={{ transform: `translate(${x}px, ${y}px)` }}
+                            onMouseEnter={() => setActiveImage(SERVICE_IMAGES[i])}
+                            onMouseLeave={() => setActiveImage(DEFAULT_IMAGE)}
                         >
-                            <div className="bg-white p-6 rounded-full shadow-lg inline-block mb-6 border border-green-50">
-                                <Icon className="w-10 h-10 text-green-600" />
+                            <div className="bg-white p-6 rounded-full shadow-lg inline-block mb-6 border border-gray-100 group-hover:border-green-700 group-hover:shadow-green-100 transition-all duration-300">
+                                <Icon className="w-9 h-9 text-gray-800 group-hover:text-green-700 transition-transform group-hover:rotate-12" />
                             </div>
-                            <h4 className="text-3xl font-bold text-gray-900 leading-tight">{service.title}</h4>
-                            <p className="text-base text-gray-600 mt-3 leading-relaxed px-4">{service.desc}</p>
+                            <h4 className="text-xl font-bold text-gray-900 leading-tight group-hover:text-green-700 transition-colors">
+                                {service.title}
+                            </h4>
+                            <p className="text-base text-gray-600 mt-3 leading-relaxed px-4 opacity-80 group-hover:opacity-100 transition-opacity">
+                                {service.desc}
+                            </p>
                         </div>
                     );
                 })}
 
             </div>
-
         </section>
     );
 }

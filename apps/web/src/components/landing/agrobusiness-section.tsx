@@ -10,9 +10,9 @@ const ICONS = [Beef, MapPin, Sprout, UtensilsCrossed, Store];
 const SERVICE_IMAGES = [
     "/image/porcine-power.png",
     "/image/tag-discovery.png",
-    "/image/production-locale.png",
+    "/image/local_product.png",
     "/image/transformation.png",
-    "/image/viande.png",
+    "/image/meat.png",
 ];
 
 export function AgrobusinessSection() {

@@ -17,7 +17,7 @@ const SERVICE_IMAGES = [
 
 export function AgrobusinessSection() {
     const { dictionary } = useDictionary<Dictionary>();
-    
+
     const DEFAULT_IMAGE = "/image/iriko_logo-removebg-preview.png";
     const [activeImage, setActiveImage] = useState(DEFAULT_IMAGE);
 
@@ -29,9 +29,9 @@ export function AgrobusinessSection() {
 
     return (
         <section className="py-24 px-6 max-w-7xl mx-auto">
-            
+
             <div className="text-center mb-32 px-4">
-                 <h2 className="text-5xl md:text-4xl font-extrabold text-black tracking-tight mb-6">
+                <h2 className="text-5xl md:text-4xl font-extrabold text-black tracking-tight mb-6">
                     {dictionary.agrobusiness.title}
                 </h2>
 
@@ -43,15 +43,15 @@ export function AgrobusinessSection() {
             </div>
 
             <div className="relative flex justify-center items-center h-[1000px]">
-               
+
                 <div className="relative w-96 h-96 rounded-full overflow-hidden border-[8px] border-white shadow-2xl z-10 bg-white flex justify-center items-center">
                     <Image
-                        key={activeImage} 
+                        key={activeImage}
                         src={activeImage}
                         fill
                         className={`transition-all duration-500 animate-in fade-in zoom-in 
                             ${isDefault ? 'object-contain p-16' : 'object-cover p-0'}`}
-                        style={{animation: 'imageTransition 0.6s ease-out'}}
+                        style={{ animation: 'imageTransition 0.6s ease-out' }}
                         alt="Iriko Content"
                     />
 
@@ -75,12 +75,16 @@ export function AgrobusinessSection() {
                             key={i}
                             className="absolute transition-all duration-500 hover:scale-110 w-80 text-center group cursor-pointer"
                             style={{ transform: `translate(${x}px, ${y}px)` }}
-                            onMouseEnter={() => setActiveImage(SERVICE_IMAGES[i])}
+                            onMouseEnter={() => setActiveImage(SERVICE_IMAGES[i] ?? "")}
                             onMouseLeave={() => setActiveImage(DEFAULT_IMAGE)}
                         >
-                            <div className="bg-white p-6 rounded-full shadow-lg inline-block mb-6 border border-gray-100 group-hover:border-green-700 group-hover:shadow-green-100 transition-all duration-300">
+
+                            {Icon ? (
                                 <Icon className="w-9 h-9 text-gray-800 group-hover:text-green-700 transition-transform group-hover:rotate-12" />
-                            </div>
+                            ) : (
+                                <div className="w-9 h-9" />
+                            )}
+
                             <h4 className="text-xl font-bold text-gray-900 leading-tight group-hover:text-green-700 transition-colors">
                                 {service.title}
                             </h4>

@@ -1,6 +1,6 @@
 import { Fragment } from 'react';
 
-import { FormationSection, HeroSection, AgrobusinessSection } from '@/components/landing';
+import { FormationSection, HeroSection, AgrobusinessSection, RseSection} from '@/components/landing';
 
 export default function HomePage() {
   return (
@@ -8,6 +8,7 @@ export default function HomePage() {
       <HeroSection />
       <FormationSection />
       <AgrobusinessSection/>
+      <RseSection/>
     </Fragment>
   );
 }

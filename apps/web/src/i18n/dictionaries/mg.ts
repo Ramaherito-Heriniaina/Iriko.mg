@@ -68,6 +68,9 @@ agrobusiness: {
     }
   }
 },
+rse: {
+  
+},
   footer: {
     tagline: '« Vokatra Tsara no tanjonay »',
     mission:

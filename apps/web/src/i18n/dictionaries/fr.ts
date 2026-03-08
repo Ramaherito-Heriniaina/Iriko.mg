@@ -66,6 +66,9 @@ export const fr = {
     }
   }
 },
+rse: {
+  
+},
   footer: {
     tagline: '« Vokatra Tsara no tanjonay »',
     mission:

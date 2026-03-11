@@ -6,6 +6,7 @@ import { pino } from 'pino';
 import { healthCheckRouter } from '@/api/health-check/health-check.route';
 import { ErrorHandler, RequestLogger } from '@/common/middlewares';
 import { env } from '@/common/utils';
+import userRouter from './api/users/users.route';
 
 const logger = pino({ name: 'server start' });
 const app: Express = express();
@@ -25,6 +26,8 @@ app.use(helmet());
 app.use(RequestLogger);
 
 app.use('/', healthCheckRouter);
+
+app.use('/users', userRouter);
 
 app.use(ErrorHandler());
 

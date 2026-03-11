@@ -33,5 +33,3 @@ async function testConnexion() {
         }
     }, 2000);
 };
-
-testConnexion();

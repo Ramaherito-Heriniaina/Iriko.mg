@@ -1,5 +1,5 @@
 {
-  "id": "f09dfc8b-5e2d-47a6-b862-c423b2bf3178",
+  "id": "d6cedba1-16c2-41af-a941-de48a91fc489",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "7",
   "dialect": "postgresql",
@@ -47,28 +47,29 @@
           "notNull": true,
           "default": "'CLIENT'"
         },
-        "isActive": {
-          "name": "isActive",
+        "is_acitve": {
+          "name": "is_acitve",
           "type": "boolean",
           "primaryKey": false,
-          "notNull": false
+          "notNull": true,
+          "default": true
         },
-        "lastLogin": {
-          "name": "lastLogin",
+        "last_login": {
+          "name": "last_login",
           "type": "timestamp",
           "primaryKey": false,
           "notNull": false,
           "default": "now()"
         },
-        "updatedAt": {
-          "name": "updatedAt",
+        "updated_at": {
+          "name": "updated_at",
           "type": "timestamp",
           "primaryKey": false,
           "notNull": true,
           "default": "now()"
         },
-        "createdAt": {
-          "name": "createdAt",
+        "created_at": {
+          "name": "created_at",
           "type": "timestamp",
           "primaryKey": false,
           "notNull": true,

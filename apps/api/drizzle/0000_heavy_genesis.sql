@@ -6,9 +6,9 @@ CREATE TABLE "users" (
 	"name" varchar(255),
 	"phone" varchar(20),
 	"role" "user_role" DEFAULT 'CLIENT' NOT NULL,
-	"isActive" boolean,
-	"lastLogin" timestamp DEFAULT now(),
-	"updatedAt" timestamp DEFAULT now() NOT NULL,
-	"createdAt" timestamp DEFAULT now() NOT NULL,
+	"is_acitve" boolean DEFAULT true NOT NULL,
+	"last_login" timestamp DEFAULT now(),
+	"updated_at" timestamp DEFAULT now() NOT NULL,
+	"created_at" timestamp DEFAULT now() NOT NULL,
 	CONSTRAINT "users_email_unique" UNIQUE("email")
 );

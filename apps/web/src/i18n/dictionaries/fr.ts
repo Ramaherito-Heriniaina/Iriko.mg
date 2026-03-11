@@ -70,16 +70,31 @@ export const fr = {
     title: 'RSE IRIKO',
     description: 'Iriko.mg s’engage activement dans la Responsabilité Sociétale des Entreprises (RSE) en partenariat avec diverses associations et entreprises. Nous proposons des formations pratiques en agroalimentaire et agrobusiness pour renforcer les capacités locales.',
     badge: 'Engagement RSE',
-    tagline: 'Pour un avenir solidaire à Mada.',
+    tagline: 'Pour un avenir solidaire à Mada',
     details: 'À travers nos sites vitrines "Porcine Power" à Akany Avoko et Bevalala, nous offrons une seconde chance aux jeunes marginalisés par l’apprentissage de l’agrobusiness.',
-    cta_button: 'Une bonne action, C\'est ici',
+    cta_button: "Une bonne action, C'est ici",
     donation_form: {
       title: 'Finaliser votre soutien',
       name_placeholder: 'Nom complet du donateur',
-      ref_placeholder: 'Référence de transaction ',
-      operators_label: 'Opérateurs locaux (Madagascar)',
+      email_placeholder: 'Votre adresse email',
+      ref_placeholder: 'Référence de transaction',
+      protocol: 'Protocole - Sécurisé',
       cancel: 'Annuler',
-      submit: 'Valider mon don'
+      submit: 'Valider mon don',
+      success_notice: 'E-mail envoyé avec succès à',
+      error_fill: "Veuillez bien remplir s'il vous plaît.",
+      email_message: "Nous avons bien reçu votre intention de don via",
+      email_thanks: "Merci pour votre soutien !",
+      ref_missing: "Aucune référence fournie"
+    },
+    receipt: {
+      title: 'Iriko Engagement',
+      subtitle: 'Coordonnées de transfert',
+      recipient_label: 'Destinataire',
+      recipient_name: 'IRIKO SARL',
+      account_label: 'Compte',
+      quick_code: 'Code Rapide',
+      scan_help: 'Scannez pour valider le transfert via votre application mobile'
     }
   },
   footer: {

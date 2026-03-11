@@ -70,18 +70,33 @@ export const mg: Dictionary = {
   },
   rse: {
     title: 'RSE IRIKO',
-    description: 'Iriko.mg dia mandray anjara mavitrika amin’ny Andraikitra Ara-tsosialin’ny Orinasa (RSE) amin’ny fiaraha-miasa amin’ny fikambanana sy orinasa maro. Manolotra fiofanana azo ampiharina amin’ny sehatry ny agroalimentaire sy agrobusiness izahay mba hanamafisana ny fahaiza-manaon’ny olona eny ifotony.',
-    badge: 'Fandraisana andraikitra RSE',
-    tagline: 'Ho an’ny ho avy mirindra eto Madagasikara.',
-    details: 'Amin’ny alalan’ny toerana fampisehoana ataonay "Porcine Power" ao Akany Avoko sy Bevalala, dia manome vintana faharoa ho an’ireo tanora voahilika izahay amin’ny alalan’ny fianarana ny agrobusiness.',
-    cta_button: 'Hanao asa soa, tsindrio eto',
+    description: 'Ny Iriko.mg dia mandray anjara mavitrika amin\'ny andraikitra ara-tsosialy ho an\'ny orinasa (RSE) miaraka amin\'ny fikambanana sy orinasa isan-karazany. Manome fiofanana praktika momba ny agroalimentaire sy agrobusiness izahay mba hanamafisana ny fahaizan’ny mponina eo an-toerana.',
+    badge: 'Fandraisana anjara RSE',
+    tagline: 'Ho an\'ny hoavy mirindra eto Madagasikara',
+    details: 'Amin\'ny alalan\'ny tranokala "Porcine Power" any Akany Avoko sy Bevalala, manome fahafahana faharoa ho an\'ny tanora izay voasakana amin\'ny fianarana agrobusiness izahay.',
+    cta_button: "Asa tsara iray, eto",
     donation_form: {
       title: 'Hamita ny fanohananao',
-      name_placeholder: 'Anarana feno an’ny mpanome fanampiana',
-      ref_placeholder: 'Laharana fanondroana ny fandoavana ',
-      operators_label: 'Mpandraharaha eto an-toerana (Madagasikara)',
+      name_placeholder: 'Anarana feno',
+      email_placeholder: 'Adiresy mailakao',
+      ref_placeholder: 'Reference-n\'ny fandoavana',
+      protocol: 'Protokoly - Azo antoka',
       cancel: 'Hanafoana',
-      submit: 'Hamarino ny fanomezako'
+      submit: 'Hamita ny fanomezana',
+      success_notice: 'Mailaka nalefa soa aman-tsara ho an\'ny',
+      error_fill: "Fenoy azafady tsara.",
+      email_message: "Efa voaray tsara ny fanirianao hanome fanomezana tamin'ny alalan'ny",
+      email_thanks: "Misaotra anao tamin'ny fanohanana!",
+      ref_missing: "Tsy misy reference nampidirina"
+    },
+    receipt: {
+      title: 'Fanohanana Iriko',
+      subtitle: 'Mombamomba ny famindrana vola',
+      recipient_label: 'Mpandray',
+      recipient_name: 'IRIKO SARL',
+      account_label: 'Kaonty',
+      quick_code: 'Kaody Haingana',
+      scan_help: 'Skanina mba hanamarina ny famindrana amin’ny app-nao'
     }
   },
   footer: {

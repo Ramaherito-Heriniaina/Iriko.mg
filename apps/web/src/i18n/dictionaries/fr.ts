@@ -41,31 +41,55 @@ export const fr = {
     ],
   },
   agrobusiness: {
-  title: "Agrobusiness & Agrotourisme",
-  description: "Notre secteur d’agrobusiness regroupe des projets innovants et durables visant à renforcer l’autonomie des communautés rurales.",
-  services: {
-    porcine_power: {
-      title: "Porcine Power",
-      desc: "Projet d’économie circulaire à Lazaina combinant élevage porcin, compost, biogaz et jardin potager, avec des formations pour les jeunes et les femmes."
-    },
-    tag_discovery: {
-      title: "Tag Discovery",
-      desc: "Voyages écotouristiques et agrotouristiques pour découvrir la nature et les pratiques agricoles de Madagascar dans une démarche responsable."
-    },
-    production_locale: {
-      title: "Production de produits locaux",
-      desc: "Production de légumes, fruits et piments avec des paysans locaux, vendus notamment dans deux mini-marchés partenaires."
-    },
-    transformation: {
-      title: "Transformation des viandes et piments",
-      desc: "Transformation de viandes et piments en produits de qualité comme saucisses, steaks et dérivés, disponibles en ligne et sur nos réseaux."
-    },
-    fournisseurs: {
-      title: "Fournisseurs de viandes",
-      desc: "Fourniture régulière de viandes de qualité aux cantines, restaurants et entreprises, en soutenant la filière locale."
+    title: "Agrobusiness & Agrotourisme",
+    description: "Notre secteur d’agrobusiness regroupe des projets innovants et durables visant à renforcer l’autonomie des communautés rurales.",
+    services: {
+      porcine_power: {
+        title: "Porcine Power",
+        desc: "Projet d’économie circulaire à Lazaina combinant élevage porcin, compost, biogaz et jardin potager, avec des formations pour les jeunes et les femmes."
+      },
+      tag_discovery: {
+        title: "Tag Discovery",
+        desc: "Voyages écotouristiques et agrotouristiques pour découvrir la nature et les pratiques agricoles de Madagascar dans une démarche responsable."
+      },
+      production_locale: {
+        title: "Production de produits locaux",
+        desc: "Production de légumes, fruits et piments avec des paysans locaux, vendus notamment dans deux mini-marchés partenaires."
+      },
+      transformation: {
+        title: "Transformation des viandes et piments",
+        desc: "Transformation de viandes et piments en produits de qualité comme saucisses, steaks et dérivés, disponibles en ligne et sur nos réseaux."
+      },
+      fournisseurs: {
+        title: "Fournisseurs de viandes",
+        desc: "Fourniture régulière de viandes de qualité aux cantines, restaurants et entreprises, en soutenant la filière locale."
+      }
     }
-  }
-},
+  },
+  lema: {
+    label: "Innovation Agricole",
+    title: "LEMA : Votre lien direct avec la terre",
+    description: "Découvrez une plateforme de pré-commande unique, conçue pour établir un pont transparent entre vous et les producteurs locaux. Personnalisez votre production et soutenez une agriculture responsable.",
+    cta: "Découvrir la démo de pré-commande",
+    badge: {
+      percentage: "100%",
+      text: "Bio-Responsable"
+    },
+    steps: [
+      {
+        title: "Personnalisation",
+        desc: "Choisissez vos produits, le type d'engrais (ex: compost) et le lieu de culture."
+      },
+      {
+        title: "Suivi en temps réel",
+        desc: "Un 'lien direct' pour suivre chaque étape, de la semence à la récolte finale."
+      },
+      {
+        title: "Qualité Garantie",
+        desc: "Une production directe, transparente et sans intermédiaires inutiles."
+      }
+    ]
+  },
   footer: {
     tagline: '« Vokatra Tsara no tanjonay »',
     mission:

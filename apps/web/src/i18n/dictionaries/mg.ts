@@ -68,6 +68,30 @@ agrobusiness: {
     }
   }
 },
+lema: {
+    label: "Innovation Agricole",
+    title: "LEMA : Votre lien direct avec la terre",
+    description: "Découvrez une plateforme de pré-commande unique, conçue pour établir un pont transparent entre vous et les producteurs locaux. Personnalisez votre production et soutenez une agriculture responsable.",
+    cta: "Découvrir la démo de pré-commande",
+    badge: {
+      percentage: "100%",
+      text: "Bio-Responsable"
+    },
+    steps: [
+      {
+        title: "Personnalisation",
+        desc: "Choisissez vos produits, le type d'engrais (ex: compost) et le lieu de culture."
+      },
+      {
+        title: "Suivi en temps réel",
+        desc: "Un 'lien direct' pour suivre chaque étape, de la semence à la récolte finale."
+      },
+      {
+        title: "Qualité Garantie",
+        desc: "Une production directe, transparente et sans intermédiaires inutiles."
+      }
+    ]
+  },
   footer: {
     tagline: '« Vokatra Tsara no tanjonay »',
     mission:

@@ -14,7 +14,6 @@ export function LemaSection() {
 
     if (!dictionary) return null;
 
-    // Extraction de toutes les variables du dictionnaire
     const { label, title, description, cta, steps, badge } = dictionary.lema;
 
     const getImageTransform = () => {
@@ -26,8 +25,7 @@ export function LemaSection() {
 
     return (
         <section id="lema" className="py-24  dark:bg-slate-950 overflow-hidden relative">
-            
-            {/* Background Pattern */}
+
             <div className="absolute inset-0 opacity-5 dark:opacity-10 pointer-events-none">
                 <svg width="100%" height="100%">
                     <defs>
@@ -42,7 +40,6 @@ export function LemaSection() {
             <div className="container mx-auto px-6 relative z-10">
                 <div className="flex flex-col lg:flex-row items-center gap-16">
                     
-                    {/* Colonne Gauche : Visuel */}
                     <div className="w-full lg:w-1/2 relative group">
                         <div 
                             className="relative rounded-3xl p-4 bg-slate-100 dark:bg-slate-900 border-2 border-slate-200 dark:border-slate-800 shadow-xl transition-all duration-500 ease-out"
@@ -63,7 +60,6 @@ export function LemaSection() {
                             </div>
                         </div>
 
-                        {/* Badge flottant (Maintenant via dictionnaire) */}
                         <div className="absolute -bottom-8 -left-8 bg-green-600 text-white p-6 rounded-2xl shadow-2xl hidden md:flex flex-col items-center gap-2 group-hover:-translate-y-2 transition-transform">
                             <Leaf className="w-10 h-10 animate-pulse" />
                             <div className="text-center">
@@ -73,7 +69,6 @@ export function LemaSection() {
                         </div>
                     </div>
 
-                    {/* Colonne Droite : Contenu Texte */}
                     <div className="w-full lg:w-1/2 space-y-10">
                         <div className="space-y-4">
                             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-400 font-semibold text-sm">
@@ -88,7 +83,6 @@ export function LemaSection() {
                             </p>
                         </div>
 
-                        {/* Liste des étapes */}
                         <div className="space-y-6">
                             {steps.map((step, index) => {
                                 const Icon = STEP_ICONS[index];
@@ -115,7 +109,6 @@ export function LemaSection() {
                             })}
                         </div>
 
-                        {/* CTA */}
                         <div className="pt-6 text-center sm:text-left">
                             <button className="inline-flex items-center px-10 py-5 bg-green-600 hover:bg-green-700 text-white font-extrabold text-lg rounded-full transition-all transform hover:scale-105 shadow-lg group">
                                 {cta}

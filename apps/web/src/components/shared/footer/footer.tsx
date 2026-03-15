@@ -18,8 +18,9 @@ export function Footer() {
 
   return (
     <footer
-      className="relative mt-12 overflow-hidden border-t"
-      style={{
+        id='footer'
+        className="relative mt-12 overflow-hidden border-t"
+        style={{
         background: 'linear-gradient(to bottom, var(--footer-bg-from), var(--footer-bg-to))',
         borderColor: 'var(--footer-border)',
         color: 'var(--footer-text)',

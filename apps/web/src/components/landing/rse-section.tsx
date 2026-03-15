@@ -80,7 +80,7 @@ export function RseSection() {
     const currentOp = operators.find(op => op.id === selectedOperator);
 
     return (
-        <section className="py-40 px-4 flex flex-col items-center">
+        <section id="rse" className="py-40 px-4 flex flex-col items-center">
 
             <div className="text-center mb-14">
                 <h2 className="text-5xl md:text-4xl font-extrabold text-black tracking-tight mb-6">

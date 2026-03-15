@@ -27,7 +27,7 @@ export function FormationSection() {
   };
 
   return (
-    <section id="services" className="py-24 dark:bg-slate-950 overflow-hidden relative">
+    <section id="formation" className="py-24 dark:bg-slate-950 overflow-hidden relative">
 
       <div className="absolute inset-0 opacity-5 dark:opacity-10 pointer-events-none">
         <svg width="100%" height="100%">

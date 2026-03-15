@@ -28,7 +28,7 @@ export function AgrobusinessSection() {
     const isDefault = activeImage === DEFAULT_IMAGE;
 
     return (
-        <section className="py-24 px-6 max-w-7xl mx-auto">
+        <section id="agrobusiness" className="py-24 px-6 max-w-7xl mx-auto">
 
             <div className="text-center mb-32 px-4">
                 <h2 className="text-5xl md:text-4xl font-extrabold text-black tracking-tight mb-6">

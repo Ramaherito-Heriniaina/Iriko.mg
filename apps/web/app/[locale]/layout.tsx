@@ -24,7 +24,7 @@ export default async function LangLayout({
   }
 
   return (
-    <div lang={locale} className="min-h-screen">
+    <div lang={locale} className="min-h-screen scroll-smooth">
       <Navbar />
       {children}
       <Footer />

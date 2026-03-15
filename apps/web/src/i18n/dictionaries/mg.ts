@@ -42,6 +42,37 @@ export const mg: Dictionary = {
       },
     ],
   },
+  rse: {
+    title: 'RSE IRIKO',
+    description: 'Ny Iriko.mg dia mandray anjara mavitrika amin\'ny andraikitra ara-tsosialy ho an\'ny orinasa (RSE) miaraka amin\'ny fikambanana sy orinasa isan-karazany. Manome fiofanana praktika momba ny agroalimentaire sy agrobusiness izahay mba hanamafisana ny fahaizan’ny mponina eo an-toerana.',
+    badge: 'Fandraisana anjara RSE',
+    tagline: 'Ho an\'ny hoavy mirindra eto Madagasikara',
+    details: 'Amin\'ny alalan\'ny tranokala "Porcine Power" any Akany Avoko sy Bevalala, manome fahafahana faharoa ho an\'ny tanora izay voasakana amin\'ny fianarana agrobusiness izahay.',
+    cta_button: "Asa tsara iray, eto",
+    donation_form: {
+      title: 'Hamita ny fanohananao',
+      name_placeholder: 'Anarana feno',
+      email_placeholder: 'Adiresy mailakao',
+      ref_placeholder: 'Reference-n\'ny fandoavana',
+      protocol: 'Protokoly - Azo antoka',
+      cancel: 'Hanafoana',
+      submit: 'Hamita ny fanomezana',
+      success_notice: 'Mailaka nalefa soa aman-tsara ho an\'ny',
+      error_fill: "Fenoy azafady tsara.",
+      email_message: "Efa voaray tsara ny fanirianao hanome fanomezana tamin'ny alalan'ny",
+      email_thanks: "Misaotra anao tamin'ny fanohanana!",
+      ref_missing: "Tsy misy reference nampidirina"
+    },
+    receipt: {
+      title: 'Fanohanana Iriko',
+      subtitle: 'Mombamomba ny famindrana vola',
+      recipient_label: 'Mpandray',
+      recipient_name: 'IRIKO SARL',
+      account_label: 'Kaonty',
+      quick_code: 'Kaody Haingana',
+      scan_help: 'Skanina mba hanamarina ny famindrana amin’ny app-nao'
+    }
+  },
 agrobusiness: {
   title: "Fambolena sy fiompiana ary fizahan-tany ara-pambolena",
   description: "Ny sehatry ny fambolena sy fiompiana ataonay dia mampiray ireo tetikasa vaovao sy maharitra izay mikendry ny hanamafy ny fahavitan-tenan'ny fiarahamonina ambanivohitra..",
@@ -68,6 +99,30 @@ agrobusiness: {
     }
   }
 },
+lema: {
+    label: "Fanavaozana eo amin'ny Tontolon'ny Fambolena",
+    title: "LEMA : Ny rohy mivantana eo aminao sy ny tany",
+    description: "Mitadiava sehatra fanaovana famandrihana mialoha (pré-commande) miavaka, natao hananganana tetezana mangarahara eo aminao sy ny tantsaha mpamokatra eo an-toerana. Amboary araka ny sitraponao ny vokatrao ary tohano ny fambolena maharitra.",
+    cta: "Hahita ny fampisehoana ny famandrihana",
+    badge: {
+      percentage: "100%",
+      text: "Natoraly"
+    },
+    steps: [
+      {
+        title: "Fanaovana araka ny sitrapo",
+        desc: "Fidio ny vokatrao, ny karazana zezika (ohatra: zezika komposta) ary ny toerana fambolena."
+      },
+      {
+        title: "Fanarahana akaiky (fotoana tena izy)",
+        desc: "Fomba iray ahafahanao manaraka ny dingana rehetra, manomboka amin'ny famafazana voa ka hatramin'ny fijinjana."
+      },
+      {
+        title: "Kalitao azo antoka",
+        desc: "Vokatra mivantana, mangarahara ary tsy misy mpanelanelana tsy ilaina."
+      }
+    ]
+  },
   footer: {
     tagline: '« Vokatra Tsara no tanjonay »',
     mission:

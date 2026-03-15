@@ -1,12 +1,8 @@
 'use client';
 
 import Image from 'next/image';
-
-import { ArrowDown } from 'lucide-react';
-import { motion } from 'motion/react';
-
+import { ChevronRight, Globe } from 'lucide-react';
 import { useDictionary } from '@/hooks/use-dictionary';
-
 import { Dictionary } from '@/i18n/dictionaries/fr';
 
 export function HeroSection() {
@@ -17,66 +13,109 @@ export function HeroSection() {
   const { hero } = dictionary;
 
   return (
-    <section id="accueil" className="relative flex min-h-screen items-center justify-center overflow-hidden">
+    <section id="accueil" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-slate-900">
+
       <div className="absolute inset-0">
-        <Image src="/image/hero-bg.jpg" alt="Terrasses agricoles à Madagascar" fill className="object-cover" />
-        <div className="bg-gradient-hero absolute inset-0" />
+        <Image
+          src="/image/hero-bg.jpg"
+          alt="Terrasses agricoles"
+          fill
+          className="object-cover opacity-60 scale-105 animate-subtle-zoom"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-950/80 via-slate-950/40 to-slate-950/90" />
       </div>
-      <div className="relative z-10 container mx-auto px-6 text-center">
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3, duration: 0.6 }}
-          className="mb-6 text-sm font-medium tracking-[0.3em] uppercase md:text-base"
-          style={{ color: 'var(--lema-foreground)', opacity: 0.7 }}
-        >
+
+      <div className="container mx-auto px-6 relative z-20 text-center">
+
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-sm font-medium tracking-widest uppercase mb-8 animate-fade-in-up">
+          <Globe className="w-4 h-4 text-green-400" />
           {hero.tagline}
-        </motion.p>
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5, duration: 0.7 }}
-          className="text-primary-foreground mb-6 text-4xl leading-tight font-bold md:text-6xl lg:text-7xl"
-        >
-          {hero.title_line1}
-          <br />
-          <span className="text-gradient-golden inline-block">{hero.title_line2}</span>
-        </motion.h1>
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.7, duration: 0.6 }}
-          className="text-primary-foreground/80 mx-auto mb-10 max-w-2xl text-lg leading-relaxed font-light md:text-xl"
-        >
+        </div>
+
+        <div className="max-w-5xl mx-auto mb-8">
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold text-white leading-[1.1] tracking-tight animate-fade-in-up [animation-delay:200ms]">
+            {hero.title_line1}
+            <br />
+            <span className="relative inline-block text-transparent bg-clip-text bg-gradient-to-r from-green-400 via-amber-200 to-yellow-500 pb-2">
+              {hero.title_line2}
+              <div className="absolute bottom-0 left-0 h-1.5 bg-green-500/50 rounded-full animate-grow-width"></div>
+            </span>
+          </h1>
+        </div>
+
+        <p className="text-lg md:text-xl text-slate-200 max-w-2xl mx-auto leading-relaxed font-light mb-12 animate-fade-in-up [animation-delay:400ms]">
           {hero.description}
-        </motion.p>
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.9, duration: 0.6 }}
-          className="flex flex-col justify-center gap-4 sm:flex-row"
-        >
+        </p>
+
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-6 animate-fade-in-up [animation-delay:600ms]">
           <a
             href="#lema"
-            className="bg-gradient-lema text-primary-foreground shadow-lema inline-flex items-center justify-center rounded-full px-8 py-4 text-sm font-semibold tracking-wide transition-opacity hover:opacity-90"
+            className="group relative inline-flex items-center justify-center px-10 py-5 bg-green-600 text-white font-bold rounded-full transition-all hover:bg-green-700 hover:scale-105 shadow-[0_0_20px_rgba(34,197,94,0.3)]"
           >
-            {hero.cta_primary}
+            <span className="flex items-center gap-2 text-lg">
+              {hero.cta_primary}
+              <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </span>
           </a>
-          <a
-            href="#formation"
-            className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 inline-flex items-center justify-center rounded-full border px-8 py-4 text-sm font-medium tracking-wide transition-colors"
-          >
-            {hero.cta_secondary}
-          </a>
-        </motion.div>
+
+        </div>
       </div>
-      <motion.div
-        animate={{ y: [0, 10, 0] }}
-        transition={{ repeat: Infinity, duration: 2 }}
-        className="text-primary-foreground/50 absolute bottom-8 left-1/2 -translate-x-1/2"
+
+      <button
+        onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-50 hover:opacity-100 transition-all cursor-pointer group"
+        aria-label="Scroll down"
       >
-        <ArrowDown size={24} />
-      </motion.div>
+
+        <div className="relative w-8 h-8 flex items-center justify-center">
+          <span className="block w-4 h-4 border-b-2 border-r-2 border-white rotate-45 transform animate-bounce group-hover:border-white/100 transition-colors"></span>
+        </div>
+
+      </button>
+
+
+      <style jsx>{`
+       @keyframes fade-in-up {
+         from { opacity: 0; transform: translateY(20px); }
+         to { opacity: 1; transform: translateY(0); }
+       }
+       @keyframes grow-width {
+         from { width: 0; }
+         to { width: 100%; }
+       }
+       @keyframes float {
+         0%, 100% { transform: translateY(0) rotate(0deg); }
+         50% { transform: translateY(-20px) rotate(5deg); }
+       }
+       @keyframes scroll-dot {
+         0% { transform: translateY(0); opacity: 1; }
+         100% { transform: translateY(15px); opacity: 0; }
+       }
+       @keyframes subtle-zoom {
+         from { transform: scale(1.05); }
+         to { transform: scale(1.1); }
+       }
+
+
+       .animate-fade-in-up {
+         animation: fade-in-up 0.8s ease-out forwards;
+         opacity: 0;
+       }
+       .animate-grow-width {
+         animation: grow-width 1s ease-out 1s forwards;
+         width: 0;
+       }
+       .animate-float {
+         animation: float 6s infinite ease-in-out;
+       }
+       .animate-scroll-dot {
+         animation: scroll-dot 1.5s infinite;
+       }
+       .animate-subtle-zoom {
+         animation: subtle-zoom 10s infinite alternate ease-in-out;
+       }
+     `}</style>
     </section>
   );
 }

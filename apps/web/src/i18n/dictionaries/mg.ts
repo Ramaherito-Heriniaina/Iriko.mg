@@ -42,32 +42,6 @@ export const mg: Dictionary = {
       },
     ],
   },
-  agrobusiness: {
-    title: "Fambolena sy fiompiana ary fizahan-tany ara-pambolena",
-    description: "Ny sehatry ny fambolena sy fiompiana ataonay dia mampiray ireo tetikasa vaovao sy maharitra izay mikendry ny hanamafy ny fahavitan-tenan'ny fiarahamonina ambanivohitra..",
-    services: {
-      porcine_power: {
-        title: "Porcine Power",
-        desc: "Tetikasa toekarena mihodina ao Lazaina mampifandray fiompiana kisoa, fanodinana fako ho zezika sy biogaz, ary fambolena zaridaina."
-      },
-      tag_discovery: {
-        title: "Tag Discovery",
-        desc: "Fitsangatsanganana écotouristique sy agrotouristique hahafantarana ny natiora sy ny fomba fambolena eto Madagasikara."
-      },
-      production_locale: {
-        title: "Famokarana vokatra eto an-toerana",
-        desc: "Famokarana legioma, voankazo ary sakay miaraka amin’ny tantsaha eo an-toerana, amidy amin’ny mini-marché mpiara-miombon’antoka."
-      },
-      transformation: {
-        title: "Fanodinana hena sy sakay",
-        desc: "Fanodinana hena sy sakay ho vokatra toy ny saosisy, steak ary vokatra hafa, amidy amin’ny tambajotra sy amin’ny Internet."
-      },
-      fournisseurs: {
-        title: "Famatsiana hena",
-        desc: "Famatsiana hena kalitao ho an’ny cantine, trano fisakafoanana ary orinasa, manohana ny sehatra famokarana eto an-toerana."
-      }
-    }
-  },
   rse: {
     title: 'RSE IRIKO',
     description: 'Ny Iriko.mg dia mandray anjara mavitrika amin\'ny andraikitra ara-tsosialy ho an\'ny orinasa (RSE) miaraka amin\'ny fikambanana sy orinasa isan-karazany. Manome fiofanana praktika momba ny agroalimentaire sy agrobusiness izahay mba hanamafisana ny fahaizan’ny mponina eo an-toerana.',

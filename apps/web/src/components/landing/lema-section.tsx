@@ -52,11 +52,6 @@ export function LemaSection() {
                                     fill
                                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                                 />
-                                <div className="absolute inset-0 bg-green-950/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                                    <div className="bg-white/90 p-4 rounded-full shadow-lg text-green-700">
-                                        <Eye className="w-8 h-8" />
-                                    </div>
-                                </div>
                             </div>
                         </div>
 

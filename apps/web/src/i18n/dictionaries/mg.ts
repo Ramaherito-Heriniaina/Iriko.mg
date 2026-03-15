@@ -100,26 +100,26 @@ agrobusiness: {
   }
 },
 lema: {
-    label: "Innovation Agricole",
-    title: "LEMA : Votre lien direct avec la terre",
-    description: "Découvrez une plateforme de pré-commande unique, conçue pour établir un pont transparent entre vous et les producteurs locaux. Personnalisez votre production et soutenez une agriculture responsable.",
-    cta: "Découvrir la démo de pré-commande",
+    label: "Fanavaozana eo amin'ny Tontolon'ny Fambolena",
+    title: "LEMA : Ny rohy mivantana eo aminao sy ny tany",
+    description: "Mitadiava sehatra fanaovana famandrihana mialoha (pré-commande) miavaka, natao hananganana tetezana mangarahara eo aminao sy ny tantsaha mpamokatra eo an-toerana. Amboary araka ny sitraponao ny vokatrao ary tohano ny fambolena maharitra.",
+    cta: "Hahita ny fampisehoana ny famandrihana",
     badge: {
       percentage: "100%",
-      text: "Bio-Responsable"
+      text: "Natoraly"
     },
     steps: [
       {
-        title: "Personnalisation",
-        desc: "Choisissez vos produits, le type d'engrais (ex: compost) et le lieu de culture."
+        title: "Fanaovana araka ny sitrapo",
+        desc: "Fidio ny vokatrao, ny karazana zezika (ohatra: zezika komposta) ary ny toerana fambolena."
       },
       {
-        title: "Suivi en temps réel",
-        desc: "Un 'lien direct' pour suivre chaque étape, de la semence à la récolte finale."
+        title: "Fanarahana akaiky (fotoana tena izy)",
+        desc: "Fomba iray ahafahanao manaraka ny dingana rehetra, manomboka amin'ny famafazana voa ka hatramin'ny fijinjana."
       },
       {
-        title: "Qualité Garantie",
-        desc: "Une production directe, transparente et sans intermédiaires inutiles."
+        title: "Kalitao azo antoka",
+        desc: "Vokatra mivantana, mangarahara ary tsy misy mpanelanelana tsy ilaina."
       }
     ]
   },

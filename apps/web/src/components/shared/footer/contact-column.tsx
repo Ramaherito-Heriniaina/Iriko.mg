@@ -18,7 +18,7 @@ export function ContactColumn({ footer }: Readonly<{ footer: Dictionary['footer'
           <Phone className="w-4 h-4 text-green-600 mt-0.5" />
           <div className="flex flex-col gap-1">
             <a href="tel:+261349137059" className="text-xs text-slate-400 hover:text-green-400 transition-colors">+261 34 913 7059</a>
-            <a href="tel:+26132xxxxxxx" className="text-xs text-slate-400 hover:text-green-400 transition-colors">+261 32 XX XXX XX</a>
+            <a href="tel:+261343858543  " className="text-xs text-slate-400 hover:text-green-400 transition-colors">+261 34 385 8543</a>
           </div>
         </div>
       </div>

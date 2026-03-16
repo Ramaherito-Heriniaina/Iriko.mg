@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useState } from 'react';
+import { useCallback, useState, useEffect } from 'react';
 
 import Image from 'next/image';
 import Link from 'next/link';
@@ -25,6 +25,8 @@ export function Navbar() {
   const { dictionary, locale } = useDictionary<Dictionary>();
   const isScrolled = useScrolled();
 
+  const [activeSection, setActiveSection] = useState('/');
+
   const navItems = useNavItems(dictionary);
   const pathnameWithoutLocale = '/' + pathname.split('/').slice(2).join('/');
 
@@ -39,6 +41,35 @@ export function Navbar() {
     },
     [pathname]
   );
+
+  useEffect(() => {
+    if (pathnameWithoutLocale !== '/') return;
+
+    const callback = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const href = entry.target.id === 'accueil' ? '/' : `#${entry.target.id}`;
+          setActiveSection(href);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(callback, {
+      rootMargin: '-40% 0px -40% 0px', 
+      threshold: 0.1,
+    });
+
+    navItems.forEach((item) => {
+      const id = item.href.startsWith('#') ? item.href.replace('#', '') : (item.href === '/' ? 'accueil' : null);
+      if (id) {
+        const element = document.getElementById(id);
+        if (element) observer.observe(element);
+      }
+    });
+
+    return () => observer.disconnect();
+  }, [navItems, pathnameWithoutLocale]);
+
 
   return (
     <motion.nav
@@ -60,24 +91,26 @@ export function Navbar() {
             priority
           />
         </Link>
+        
         <ul className="hidden items-center gap-8 md:flex">
           {navItems.map((item) => (
             <li key={item.href}>
               <NavLink
                 item={item}
-                isActive={pathnameWithoutLocale === item.href}
+                isActive={activeSection === item.href || (pathnameWithoutLocale === item.href && activeSection === '/')}
                 isScrolled={isScrolled}
+                onClick={() => setActiveSection(item.href)}
               />
             </li>
           ))}
         </ul>
+
         <div className="flex items-center gap-3">
           <LocaleSwitcher currentLocale={locale} isScrolled={isScrolled} switchLocale={switchLocale} />
           <button
             onClick={toggleMobileMenu}
             className="rounded-md p-1 transition-colors md:hidden"
             aria-label="Toggle menu"
-            aria-expanded={isMobileMenuOpen}
           >
             {isMobileMenuOpen ? (
               <X size={26} className={isScrolled ? 'text-gray-800' : 'text-white'} />
@@ -87,6 +120,7 @@ export function Navbar() {
           </button>
         </div>
       </div>
+      
       <MobileMenu
         isOpen={isMobileMenuOpen}
         items={navItems}

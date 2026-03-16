@@ -71,9 +71,7 @@ export function HeroSection() {
         <div className="relative w-8 h-8 flex items-center justify-center">
           <span className="block w-4 h-4 border-b-2 border-r-2 border-white rotate-45 transform animate-bounce group-hover:border-white/100 transition-colors"></span>
         </div>
-
       </button>
-
 
       <style jsx>{`
        @keyframes fade-in-up {

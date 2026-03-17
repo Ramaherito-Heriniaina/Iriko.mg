@@ -2,7 +2,7 @@ CREATE TYPE "public"."user_role" AS ENUM('CLIENT', 'ADMIN');--> statement-breakp
 CREATE TABLE "users" (
 	"id" uuid PRIMARY KEY DEFAULT gen_random_uuid() NOT NULL,
 	"email" varchar(255) NOT NULL,
-	"password" varchar(255),
+	"password" varchar(255) NOT NULL,
 	"name" varchar(255),
 	"phone" varchar(20),
 	"role" "user_role" DEFAULT 'CLIENT' NOT NULL,

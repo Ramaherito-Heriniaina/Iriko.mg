@@ -1,17 +1,54 @@
 import { Request, Response } from "express";
 import { userService } from "./users.service";
-import { NewUser } from "./users.types"
+import { CreateUserInput, NewUser } from "./users.types"
+import { StatusCodes } from "http-status-codes";
 
 export const userController = {
-    register: async (req: Request, res: Response) => {
+
+    findAll: async (req: Request,res: Response) => {
         try {
-            const data: NewUser = req.body;
-            console.log("the data in controller :",data);
-            const createdUser = await userService.create(data);
-            res.status(201).json(createdUser);
+            const users = await userService.findAll();
+
+            res.json({
+                success: true,
+                data: users,
+                count: users.length
+            });
+
         } catch (error) {
-            console.log("!!Service Error",error);
-            res.status(500).json({ message: "Cannot create user"})
+            res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
+                succes: false,
+                error: "Error fetching users"
+            })
         }
-    }
+    },
+
+    create: async (req: Request<{}, {}, CreateUserInput>, res: Response) => {
+        
+        try {
+
+            const userData: CreateUserInput = req.body;
+        
+            const newCreatedUser = await userService.create(userData);
+            
+            res.status(StatusCodes.CREATED).json({
+                success: true,
+                data: newCreatedUser,
+                message: "User created successfully"
+            });
+        } catch (error: any) {
+            
+            if (error.code === '23505') {
+                return res.status(StatusCodes.CONFLICT).json({
+                success: false,
+                error: "Email already exists"
+            })};
+
+            res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
+            success: false,
+            error: "Error creating user"
+            });
+
+        }
+    },
 }

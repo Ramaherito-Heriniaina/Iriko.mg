@@ -1,6 +1,5 @@
 import 'dotenv/config';
 import { drizzle } from 'drizzle-orm/node-postgres';
-import { sql } from 'drizzle-orm';
 import { Pool } from 'pg';
 import { schema } from '@/db/schema';
 import { env } from '@/common/utils';

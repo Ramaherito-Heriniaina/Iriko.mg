@@ -22,15 +22,3 @@ export const db = drizzle({
 });
 
 export { pool };
-
-//deleted later
-async function testConnexion() {
-    setInterval(async () => {
-        try {
-            await db.execute(sql`SELECT 1`);
-            console.log("Requête envoyée...");
-        } catch (error) {
-            console.error("Erreur lors de la requête :", error);
-        }
-    }, 2000);
-};

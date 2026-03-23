@@ -1,9 +1,10 @@
 import z from "zod";
 import { users } from "@/db/schema";
-import { createUserSChema } from "./users.validation";
+import { createUserSchema, updateUserSchema } from "./users.validation";
 
 //Type Zod
-export type CreateUserInput = z.infer<typeof createUserSChema>;
+export type CreateUserInput = z.infer<typeof createUserSchema>;
+export type UpdateUserInput = z.infer<typeof updateUserSchema>;
 
 //Type for database
 export type User = typeof users.$inferSelect;

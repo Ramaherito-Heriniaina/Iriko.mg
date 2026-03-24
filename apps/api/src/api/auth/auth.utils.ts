@@ -32,12 +32,10 @@ if (require.main === module) {
     const token = generateToken(myPayload);
     console.log('✅ Token généré:', token);
 
-  // 3. On vérifie que l'extraction du header fonctionne aussi
-  const fakeHeader = `Bearer ${token}`;
-  const extracted = extractToken(fakeHeader);
-  console.log('✅ Token extrait du header:', extracted);
+    const fakeHeader = `Bearer ${token}`;
+    const extracted = extractToken(fakeHeader);
+    console.log('✅ Token extrait du header:', extracted);
 
-  // 4. On vérifie le contenu du token
-  const decoded = verifyToken(token);
-  console.log('✅ Contenu décodé du payload:', decoded);
+    const decoded = verifyToken(token);
+    console.log('✅ Contenu décodé du payload:', decoded);
 }

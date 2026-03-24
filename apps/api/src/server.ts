@@ -28,7 +28,7 @@ app.use(RequestLogger);
 
 app.use('/', healthCheckRouter);
 app.use('/users', userRouter);
-app.use('/auth', authRouter)
+app.use('/auth', authRouter);
 
 app.use(ErrorHandler());
 

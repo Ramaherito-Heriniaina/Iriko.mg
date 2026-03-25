@@ -123,6 +123,34 @@ lema: {
       }
     ]
   },
+   preCommande: {
+      hero: {
+        badge: "Vokatra 100% Bio",
+        title: "Legioma hafakely",
+        subtitle: "BIO",
+        quote: "Avy amin'ny tany mankeny amin'ny latabatrao, fehezo ny vokatrao amin'ny alalan'ny fisafidianana ny fomba hambolena azy.",
+        btnDiscover: "Hahafantatra an'i LEMA",
+        btnView: "Hijery ny voka-pambolena",
+        qualityBadge: "VOATANDRINA"
+      },
+      modal: {
+        title: "Mombamomba an'i LEMA",
+        slogan: "Ny fambolena manara-penitra eo am-pelatananao.",
+        description: "LEMA dia sehatra vaovao ahafahan'ny tsirairay ho lasa mpamokatra na dia lavitra aza. Atambatray ny teknolojia sy ny fambolena natoraly mba hanomezana anao ny fahefana feno amin'ny voly ataonao.",
+        points: {
+          transparency: "Mangarahara: Araho mivantana ny fitomboan'ny legiomanao.",
+          ethics: "Ara-drariny: Fomba fambolena 100% bio sy manaja ny tontolo iainana.",
+          local: "An-toerana: Tohano ny tantsaha malagasy sy ny fanjifana vokatra madio."
+        },
+        btnClose: "Azo antoka"
+      },
+      features: [
+        { title: "Fanaterana akaiky", desc: "Maneranan ny Nosy", icon: "🚚" },
+        { title: "Fandoavam-bola", desc: "50% mialoha ny famandrihana", icon: "🛡️" },
+        { title: "Famerenam-bola", desc: "Raha sanatria misy fatiantoka", icon: "💰" },
+        { title: "Fanaraha-maso", desc: "Avy eny an-tsaha mivantana", icon: "⚡" }
+      ]
+    },
   footer: {
     tagline: '« Vokatra Tsara no tanjonay »',
     mission:
@@ -133,5 +161,6 @@ lema: {
     },
     copyright: 'Fahendrena & Maharitra',
     tags: ['Madagasikara', 'Fizahan-tany'],
-  },
+  }
+
 };

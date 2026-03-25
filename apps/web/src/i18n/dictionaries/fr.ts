@@ -121,6 +121,34 @@ export const fr = {
       }
     ]
   },
+  preCommande: {
+    hero: {
+      badge: "Produits 100% Bio",
+      title: "Exotic Vegetables",
+      subtitle: "ORGANIC",
+      quote: "De la terre à votre table, contrôlez votre production en choisissant vos propres paramètres de culture.",
+      btnDiscover: "Découvrir LEMA",
+      btnView: "Voir les récoltes",
+      qualityBadge: "GARANTIE"
+    },
+    modal: {
+      title: "À propos de LEMA",
+      slogan: "L'Agriculture Intelligente au bout des doigts.",
+      description: "LEMA est une plateforme innovante qui permet à chacun de devenir producteur agricole à distance. Nous combinons la technologie et l'agriculture biologique pour vous offrir un contrôle total sur vos cultures.",
+      points: {
+        transparency: "Transparence : Suivez la croissance de vos légumes en temps réel.",
+        ethics: "Éthique : Des méthodes 100% bio et respectueuses de l'environnement.",
+        local: "Local : Soutenez l'agriculture malgache tout en assurant votre sécurité alimentaire."
+      },
+      btnClose: "J'ai compris"
+    },
+    features: [
+      { title: "Livraison Locale", desc: "Partout à Madagascar", icon: "🚚" },
+      { title: "Paiement Sécurisé", desc: "50% pré-commande", icon: "🛡️" },
+      { title: "Garantie Remboursement", desc: "Si perte de récolte", icon: "💰" },
+      { title: "Suivi Réel", desc: "Directement du champ", icon: "⚡" }
+    ]
+  },
   footer: {
     tagline: '« Vokatra Tsara no tanjonay »',
     mission:
@@ -131,7 +159,7 @@ export const fr = {
     },
     copyright: 'Excellence & Durabilité',
     tags: ['Madagascar', 'Écotourisme'],
-  },
+  }
 };
 
 export type Dictionary = typeof fr;

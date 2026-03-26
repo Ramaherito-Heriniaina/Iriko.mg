@@ -147,8 +147,58 @@ export const fr = {
       { title: "Paiement Sécurisé", desc: "50% pré-commande", icon: "🛡️" },
       { title: "Garantie Remboursement", desc: "Si perte de récolte", icon: "💰" },
       { title: "Suivi Réel", desc: "Directement du champ", icon: "⚡" }
-    ]
+    ],
+
+    footer: {
+      whyChooseUs: {
+        title: "Pourquoi nous choisir ?",
+        description: "De la terre à votre table, un engagement pour une qualité irréprochable et un suivi transparent.",
+        slogan: "Vokatra tsara no tanjonay",
+        features: {
+          fresh: {
+            title: "Toujours Frais",
+            desc: "Récolté à maturité et livré directement depuis nos champs partenaires."
+          },
+          healthy: {
+            title: "Sain & Naturel",
+            desc: "Zéro pesticide chimique, une culture respectueuse de votre santé."
+          },
+          natural: {
+            title: "100% Authentique",
+            desc: "Des semences sélectionnées pour leur goût véritable et leur robustesse."
+          },
+          quality: {
+            title: "Qualité Premium",
+            desc: "Chaque commande est vérifiée par nos techniciens avant la livraison."
+          }
+        }
+      },
+      brand: {
+        name: "LEMA",
+        description: "LEMA est votre plateforme de pré-commande directe, établissant un lien transparent entre consommateurs et producteurs locaux."
+      },
+      newsletter: {
+        title: "Newsletter",
+        desc: "Restez informé des prochaines périodes de récoltes.",
+        placeholder: "Votre adresse email",
+        btn: "S'inscrire"
+      },
+      hours: {
+        title: "Horaires",
+        weekdays: { label: "Lundi - Vendredi", time: "8h00 - 18h00" },
+        saturday: { label: "Samedi", time: "8h00 - 12h00" },
+        sunday: { label: "Dimanche", time: "Fermé" }
+      },
+      contact: {
+        title: "Contactez-nous",
+        location: "Lot A 17 F, Ambohitrarahaba, Antananarivo 103, Madagascar",
+        phone: "261 34 913 7059 / +261 34 385 8543  ",
+        email: "irikomg@iriko.org"
+      },
+      copyright: "© 2026 Plateforme LEMA - Tous droits réservés."
+    }
   },
+
   footer: {
     tagline: '« Vokatra Tsara no tanjonay »',
     mission:

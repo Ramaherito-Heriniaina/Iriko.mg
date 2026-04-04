@@ -4,7 +4,7 @@ import { TokenPayload } from "./auth.types";
 
 export const generateToken = (payload: TokenPayload): string => {
 
-    return jwt.sign(payload, env.JWT_SECRET_KEY, { expiresIn: 30 })
+    return jwt.sign(payload, env.JWT_SECRET_KEY, { expiresIn: '1d' })
 }
 
 export const verifyToken = (token: string): TokenPayload => {
@@ -30,12 +30,12 @@ if (require.main === module) {
     };
 
     const token = generateToken(myPayload);
-    console.log('✅ Token généré:', token);
+    console.log('Token généré:', token);
 
     const fakeHeader = `Bearer ${token}`;
     const extracted = extractToken(fakeHeader);
-    console.log('✅ Token extrait du header:', extracted);
+    console.log('Token extrait du header:', extracted);
 
     const decoded = verifyToken(token);
-    console.log('✅ Contenu décodé du payload:', decoded);
+    console.log('Contenu décodé du payload:', decoded);
 }

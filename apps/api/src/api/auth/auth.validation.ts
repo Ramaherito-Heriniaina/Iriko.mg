@@ -11,7 +11,6 @@ export const registerSchema = z.object({
 
 export const loginSchema = z.union([
   z.object({ email: z.string().email(), password: z.string().min(1) }),
-  z.object({ name: z.string().min(1), password: z.string().min(1) }),
   z.object({ phone: z.string().min(1), password: z.string().min(1) }),
 ]);
 

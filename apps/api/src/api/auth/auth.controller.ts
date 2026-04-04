@@ -60,24 +60,6 @@ export const authController = {
         }
     },
 
-    me: async (req: Request, res: Response) => {
-        try {
-            const user = await authService.me(req.user!.id);
-            if (!user) {
-                return res.status(StatusCodes.NOT_FOUND).json({
-                    success: false,
-                    error: 'User not found',
-                });
-            }
-            res.json({ success: true, data: user });
-        } catch {
-            res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
-                success: false,
-                error: 'Error fetching profile',
-            });
-        }
-    },
-
     logout: (_req: Request, res: Response) => {
 
         res.json({

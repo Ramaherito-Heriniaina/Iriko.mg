@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { userService } from "./users.service";
-import { CreateUserInput, UpdateUserInput, NewUser } from "./users.types"
+import { UpdateUserInput} from "./users.types"
 import { StatusCodes } from "http-status-codes";
 
 export const userController = {

@@ -4,7 +4,7 @@ import { eq, or } from 'drizzle-orm';
 
 import { db } from '@/db';
 import { users } from '@/db/schema';
-import { NewUser, UserResponse } from '../users/users.types';
+import { NewUser } from '../users/users.types';
 import { RegisterInput, LoginInput, TokenPayload, AuthResponse } from './auth.types';
 import { generateToken } from './auth.utils';
 

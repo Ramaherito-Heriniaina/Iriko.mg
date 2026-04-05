@@ -1,11 +1,13 @@
-import { Fragment } from 'react';
+'use client';
 
-import { HeaderLema, FooterLema } from '@/components/pre-commande';
+import { Fragment } from 'react';
+import { HeaderLema, ProductList, FooterLema } from '@/components/pre-commande';
 
 export default function PreCommandePage() {
     return (
         <Fragment>
             <HeaderLema />
+            <ProductList />
             <FooterLema />
         </Fragment>
     );

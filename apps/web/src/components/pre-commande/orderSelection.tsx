@@ -5,22 +5,40 @@ import { ORDER_OPTIONS, LieuName } from './orderConfig';
 import { ChevronRight, Leaf, MapPin, Package } from 'lucide-react';
 
 interface OrderSelectionProps {
-    qty: number; setQty: (v: number) => void;
-    selectedEngrais: any; setSelectedEngrais: (v: any) => void;
-    lieu: any; setLieu: (v: any) => void;
+    qty: number; 
+    setQty: (v: number) => void;
+    selectedEngrais: any; 
+    setSelectedEngrais: (v: any) => void;
+    lieu: any; 
+    setLieu: (v: any) => void;
+    dict: any; 
     onValidate: () => void;
 }
 
-export function OrderSelection({ qty, setQty, selectedEngrais, setSelectedEngrais, lieu, setLieu, onValidate }: OrderSelectionProps) {
+export function OrderSelection({ 
+    qty, 
+    setQty, 
+    selectedEngrais, 
+    setSelectedEngrais, 
+    lieu, 
+    setLieu, 
+    dict, 
+    onValidate 
+}: OrderSelectionProps) {
+
+    const t = dict?.preCommande?.footer?.whyChooseUs?.features?.selection;
+    
     const isFormValid = qty >= 5 && selectedEngrais !== null && lieu !== null;
 
     return (
         <div className="max-w-md mx-auto space-y-8 animate-in fade-in duration-700">
-          
+ 
             <div className="space-y-3">
                 <div className="flex items-center gap-2 px-1">
                     <Package size={14} className="text-green-500" />
-                    <label className="text-[10px] font-black uppercase text-slate-400 tracking-[0.2em]">Volume de commande</label>
+                    <label className="text-[10px] font-black uppercase text-slate-400 tracking-[0.2em]">
+                        {t?.volume_label || 'Volume de commande'}
+                    </label>
                 </div>
                 <div className="relative group">
                     <input
@@ -33,22 +51,27 @@ export function OrderSelection({ qty, setQty, selectedEngrais, setSelectedEngrai
                                 : 'border-slate-100 focus:border-green-500 focus:shadow-green-100/50'}`}
                     />
                     <div className="absolute right-8 top-1/2 -translate-y-1/2 flex flex-col items-end">
-                        <span className={`font-black text-xl ${qty < 5 && qty !== 0 ? 'text-red-400' : 'text-slate-900'}`}>KG</span>
-                        <span className="text-[8px] font-black uppercase opacity-40 tracking-tighter text-slate-500">Poids Net</span>
+                        <span className={`font-black text-xl ${qty < 5 && qty !== 0 ? 'text-red-400' : 'text-slate-900'}`}>
+                            {t?.unit_kg || 'KG'}
+                        </span>
+                        <span className="text-[8px] font-black uppercase opacity-40 tracking-tighter text-slate-500">
+                            {t?.net_weight || 'Poids Net'}
+                        </span>
                     </div>
                 </div>
                 {qty < 5 && qty !== 0 && (
                     <p className="text-red-500 text-[9px] font-black uppercase tracking-widest ml-4 animate-bounce">
-                        ⚠ Minimum : 5 kg requis
+                        {t?.min_error || '⚠ Minimum : 5 kg requis'}
                     </p>
                 )}
             </div>
 
- 
             <div className="space-y-3">
                 <div className="flex items-center gap-2 px-1">
                     <Leaf size={14} className="text-green-500" />
-                    <label className="text-[10px] font-black uppercase text-slate-400 tracking-[0.2em]">Variété d'engrais</label>
+                    <label className="text-[10px] font-black uppercase text-slate-400 tracking-[0.2em]">
+                        {t?.fertilizer_label || "Variété d'engrais"}
+                    </label>
                 </div>
                 <div className="grid grid-cols-1 gap-2.5">
                     {ORDER_OPTIONS.engrais.map(e => (
@@ -65,7 +88,9 @@ export function OrderSelection({ qty, setQty, selectedEngrais, setSelectedEngrai
                                 <span className={`text-[11px] font-black uppercase tracking-wider ${selectedEngrais?.name === e.name ? 'text-green-700' : 'text-slate-900'}`}>
                                     {e.name}
                                 </span>
-                                <span className="text-[8px] font-bold text-slate-400 uppercase tracking-tighter">Fertilisant Premium</span>
+                                <span className="text-[8px] font-bold text-slate-400 uppercase tracking-tighter">
+                                    {t?.fertilizer_sub || 'Fertilisant Premium'}
+                                </span>
                             </div>
                             <div className="flex items-center gap-3">
                                 <span className={`text-xs font-black ${selectedEngrais?.name === e.name ? 'text-green-600' : 'text-slate-500'}`}>
@@ -84,7 +109,9 @@ export function OrderSelection({ qty, setQty, selectedEngrais, setSelectedEngrai
             <div className="space-y-3">
                 <div className="flex justify-center items-center gap-2">
                     <MapPin size={14} className="text-green-500" />
-                    <label className="text-[10px] font-black uppercase text-slate-400 tracking-[0.2em]">Origine de production</label>
+                    <label className="text-[10px] font-black uppercase text-slate-400 tracking-[0.2em]">
+                        {t?.origin_label || 'Origine de production'}
+                    </label>
                 </div>
                 <div className="grid grid-cols-3 gap-3">
                     {ORDER_OPTIONS.lieux.map(l => (
@@ -120,11 +147,11 @@ export function OrderSelection({ qty, setQty, selectedEngrais, setSelectedEngrai
                 <div className="relative flex items-center justify-center gap-3">
                     {isFormValid ? (
                         <>
-                            <span>Générer ma facture</span>
+                            <span>{t?.btn_generate || 'Générer ma facture'}</span>
                             <ChevronRight size={16} strokeWidth={3} className="animate-pulse" />
                         </>
                     ) : (
-                        <span>Compléter vos choix</span>
+                        <span>{t?.btn_incomplete || 'Compléter vos choix'}</span>
                     )}
                 </div>
      

@@ -1,37 +1,38 @@
 export interface Product {
    id: string;
-   name: string;
+   nameKey: string;     
+   categoryKey: string; 
    pricePerKg: number;
    image: string;
-   category: 'Grains' | 'Brèdes' | 'Légumes' | 'Tubercules';
+   name?: string;    
+   category?: string;
 }
 
 const RAW_PRODUCTS: Omit<Product, 'id'>[] = [
    // --- GRAINS ---
-   { name: 'Haricot Vert', pricePerKg: 4000, image: '/images/haricot-vert.jpg', category: 'Grains' },
-   { name: 'Haricot Rouge', pricePerKg: 4500, image: '/images/haricot-rouge.jpg', category: 'Grains' },
-   { name: 'Haricot Blanc', pricePerKg: 4200, image: '/images/haricot-blanc.jpg', category: 'Grains' },
-   { name: 'Kabaro', pricePerKg: 5500, image: '/images/kabaro.jpg', category: 'Grains' },
-   { name: 'Katsaka (Maïs)', pricePerKg: 2500, image: '/images/katsaka.jpg', category: 'Grains' },
-   { name: 'Voanjobory', pricePerKg: 6000, image: '/images/voanjobory.jpg', category: 'Grains' },
+   { nameKey: 'haricot_vert', pricePerKg: 4000, image: '/images/haricot-vert.jpg', categoryKey: 'grains' },
+   { nameKey: 'haricot_rouge', pricePerKg: 4500, image: '/images/haricot-rouge.jpg', categoryKey: 'grains' },
+   { nameKey: 'haricot_blanc', pricePerKg: 4200, image: '/images/haricot-blanc.jpg', categoryKey: 'grains' },
+   { nameKey: 'kabaro', pricePerKg: 5500, image: '/images/kabaro.jpg', categoryKey: 'grains' },
+   { nameKey: 'katsaka', pricePerKg: 2500, image: '/images/katsaka.jpg', categoryKey: 'grains' },
+   { nameKey: 'voanjobory', pricePerKg: 6000, image: '/images/voanjobory.jpg', categoryKey: 'grains' },
 
    // --- BRÈDES ---
-   { name: 'Anan-drano', pricePerKg: 1500, image: '/images/anandrano.jpg', category: 'Brèdes' },
-   { name: 'Anamamy', pricePerKg: 1200, image: '/images/anamamy.jpg', category: 'Brèdes' },
-   { name: 'Anatsonga', pricePerKg: 1300, image: '/images/anatsonga.jpg', category: 'Brèdes' },
+   { nameKey: 'anandrano', pricePerKg: 1500, image: '/images/anandrano.jpg', categoryKey: 'bredes' },
+   { nameKey: 'anamamy', pricePerKg: 1200, image: '/images/anamamy.jpg', categoryKey: 'bredes' },
+   { nameKey: 'anatsonga', pricePerKg: 1300, image: '/images/anatsonga.jpg', categoryKey: 'bredes' },
 
-   // --- LÉGUMES FRUITS ---
-   { name: 'Tomate', pricePerKg: 3000, image: '/images/tomate.jpg', category: 'Légumes' },
-   { name: 'Aubergine', pricePerKg: 2500, image: '/images/aubergine.jpg', category: 'Légumes' },
-   { name: 'Poivron', pricePerKg: 3500, image: '/images/poivron.jpg', category: 'Légumes' },
-   { name: 'Concombre', pricePerKg: 2000, image: '/images/concombre.jpg', category: 'Légumes' },
+   // --- LÉGUMES ---
+   { nameKey: 'tomate', pricePerKg: 3000, image: '/images/tomate.jpg', categoryKey: 'legumes' },
+   { nameKey: 'aubergine', pricePerKg: 2500, image: '/images/aubergine.jpg', categoryKey: 'legumes' },
+   { nameKey: 'poivron', pricePerKg: 3500, image: '/images/poivron.jpg', categoryKey: 'legumes' },
+   { nameKey: 'concombre', pricePerKg: 2000, image: '/images/concombre.jpg', categoryKey: 'legumes' },
 
    // --- TUBERCULES ---
-   { name: 'Carotte', pricePerKg: 3500, image: '/images/carotte.jpg', category: 'Tubercules' },
-   { name: 'Pomme de terre', pricePerKg: 2800, image: '/images/pdt.jpg', category: 'Tubercules' },
-   { name: 'Patate douce', pricePerKg: 3200, image: '/images/patate-douce.jpg', category: 'Tubercules' }
+   { nameKey: 'carotte', pricePerKg: 3500, image: '/images/carotte.jpg', categoryKey: 'tubercules' },
+   { nameKey: 'pdt', pricePerKg: 2800, image: '/images/pdt.jpg', categoryKey: 'tubercules' },
+   { nameKey: 'patate_douce', pricePerKg: 3200, image: '/images/patate-douce.jpg', categoryKey: 'tubercules' }
 ];
-
 
 export const LEMA_PRODUCTS: Product[] = RAW_PRODUCTS.map((product, index) => ({
     ...product,

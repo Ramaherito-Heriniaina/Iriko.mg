@@ -11,11 +11,19 @@ import { X, ChevronRight, ShoppingBag } from 'lucide-react';
 interface OrderModalProps {
     product: Product | null;
     onClose: () => void;
+    dict: any; 
 }
 
-export function OrderModal({ product, onClose }: OrderModalProps) {
-    const [step, setStep] = useState<'selection' | 'proforma' | 'payment'>('selection');
+export function OrderModal({ product, onClose, dict }: OrderModalProps) {
+   
+    const t = dict.preCommande; 
+    const flow = t.orderFlow; 
 
+    const productName = product 
+        ? (dict.products?.name?.[(product as any).nameKey] || (product as any).name || 'Produit') 
+        : '';
+
+    const [step, setStep] = useState<'selection' | 'proforma' | 'payment'>('selection');
     const [qty, setQty] = useState<number>(5);
     const [selectedEngrais, setSelectedEngrais] = useState<{ name: string, price: number } | null>(null);
     const [lieu, setLieu] = useState<LieuName | null>(null);
@@ -48,7 +56,6 @@ export function OrderModal({ product, onClose }: OrderModalProps) {
 
     return (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 bg-slate-950/40 backdrop-blur-md animate-in fade-in duration-300">
-            
             <div className="bg-white w-full max-w-xl rounded-[40px] shadow-[0_32px_64px_-12px_rgba(0,0,0,0.2)] overflow-hidden border border-white/20 relative">
              
                 <div className="absolute top-0 left-0 w-full h-1.5 bg-slate-100 z-50">
@@ -65,29 +72,33 @@ export function OrderModal({ product, onClose }: OrderModalProps) {
                         </div>
                         <div className="flex flex-col">
                             <h2 className="text-sm font-black uppercase tracking-widest text-slate-900 leading-none">
-                                {step === 'selection' ? 'Configuration' : 
-                                 step === 'proforma' ? 'Ma Facture' : 'Paiement'}
+                                {step === 'selection' ? (flow?.steps?.selection || 'Configuration') : 
+                                 step === 'proforma' ? (flow?.steps?.proforma || 'Ma Facture') : 
+                                 (flow?.steps?.payment || 'Paiement')}
                             </h2>
                             <span className="text-[9px] font-bold text-slate-400 uppercase tracking-tighter mt-1">
-                                {product.name} • IRIKO MG
+                                {productName} • IRIKO MG
                             </span>
                         </div>
                     </div>
                     
-                    <button 
-                        onClick={onClose} 
-                        className="group w-10 h-10 flex items-center justify-center rounded-2xl bg-slate-50 hover:bg-red-50 text-slate-400 hover:text-red-500 transition-all duration-300"
-                    >
+                    <button onClick={onClose} className="group w-10 h-10 flex items-center justify-center rounded-2xl bg-slate-50 hover:bg-red-50 text-slate-400 hover:text-red-500 transition-all duration-300">
                         <X size={20} strokeWidth={3} className="group-hover:rotate-90 transition-transform" />
                     </button>
                 </div>
 
                 <div className="px-8 pb-6 flex items-center gap-2">
-                    <span className={`text-[8px] font-black uppercase tracking-widest ${step === 'selection' ? 'text-green-600' : 'text-slate-300'}`}>Choix</span>
+                    <span className={`text-[8px] font-black uppercase tracking-widest ${step === 'selection' ? 'text-green-600' : 'text-slate-300'}`}>
+                        {flow?.steps?.labelSelection || 'Choix'}
+                    </span>
                     <ChevronRight size={10} className="text-slate-200" />
-                    <span className={`text-[8px] font-black uppercase tracking-widest ${step === 'proforma' ? 'text-green-600' : 'text-slate-300'}`}>Résumé</span>
+                    <span className={`text-[8px] font-black uppercase tracking-widest ${step === 'proforma' ? 'text-green-600' : 'text-slate-300'}`}>
+                        {flow?.steps?.labelProforma || 'Résumé'}
+                    </span>
                     <ChevronRight size={10} className="text-slate-200" />
-                    <span className={`text-[8px] font-black uppercase tracking-widest ${step === 'payment' ? 'text-green-600' : 'text-slate-300'}`}>Acompte</span>
+                    <span className={`text-[8px] font-black uppercase tracking-widest ${step === 'payment' ? 'text-green-600' : 'text-slate-300'}`}>
+                        {flow?.steps?.labelPayment || 'Acompte'}
+                    </span>
                 </div>
 
                 <div className="px-8 pb-10 max-h-[75vh] overflow-y-auto scrollbar-thin scrollbar-thumb-slate-200 scrollbar-track-transparent">
@@ -98,22 +109,21 @@ export function OrderModal({ product, onClose }: OrderModalProps) {
                                 selectedEngrais={selectedEngrais} setSelectedEngrais={setSelectedEngrais}
                                 lieu={lieu} setLieu={setLieu}
                                 onValidate={() => setStep('proforma')}
+                                dict={dict} 
                             />
                         ) : step === 'proforma' ? (
                             <OrderProforma
-                                product={product}
-                                qty={qty}
-                                selectedEngrais={selectedEngrais}
-                                lieu={lieu}
-                                unitPrice={unitPrice}
-                                total={total}
+                                product={product} qty={qty} selectedEngrais={selectedEngrais} lieu={lieu}
+                                unitPrice={unitPrice} total={total}
                                 onBack={() => setStep('selection')}
                                 onNext={() => setStep('payment')} 
+                                dict={dict}
                             />
                         ) : (
                             <OrderPayment 
                                 total={total}
                                 onBack={() => setStep('proforma')}
+                                dict={dict}
                             />
                         )}
                     </div>
@@ -122,7 +132,9 @@ export function OrderModal({ product, onClose }: OrderModalProps) {
                 <div className="px-8 py-4 bg-slate-50 border-t border-slate-100 flex justify-center">
                     <div className="flex items-center gap-2 opacity-30 grayscale">
                         <div className="h-[1px] w-8 bg-slate-400" />
-                        <span className="text-[7px] font-black uppercase tracking-[0.4em] text-slate-500 whitespace-nowrap italic">Iriko Agriculture Durable</span>
+                        <span className="text-[7px] font-black uppercase tracking-[0.4em] text-slate-500 whitespace-nowrap italic">
+                            {dict.footer?.tagline || 'Vokatra tsara no tanjonay'}
+                        </span>
                         <div className="h-[1px] w-8 bg-slate-400" />
                     </div>
                 </div>

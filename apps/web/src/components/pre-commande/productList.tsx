@@ -4,22 +4,30 @@ import { useState } from 'react';
 import { ProductCard } from './productCard';
 import { OrderModal } from './orderModal';
 import { LEMA_PRODUCTS, Product } from './produitConst';
+import { useDictionary } from '@/hooks/use-dictionary'; 
+import { Dictionary } from '@/i18n/dictionaries/fr';
 
 export function ProductList() {
-    const [selectedCategory, setSelectedCategory] = useState('Tous');
+    const { dictionary } = useDictionary<Dictionary>();
+    const [selectedCategory, setSelectedCategory] = useState('all');
     const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 
-    const categories = ['Tous', 'Grains', 'Brèdes', 'Légumes', 'Tubercules'];
+    if (!dictionary) return null;
 
-    const filteredProducts = selectedCategory === 'Tous'
+    const categoryDict = dictionary.preCommande.footer.whyChooseUs.products.category;
+
+    const categories = ['all', ...Object.keys(categoryDict)];
+
+    const filteredProducts = selectedCategory === 'all'
         ? LEMA_PRODUCTS
-        : LEMA_PRODUCTS.filter(product => product.category === selectedCategory);
+        : LEMA_PRODUCTS.filter(product => product.categoryKey.toLowerCase() === selectedCategory.toLowerCase());
 
     return (
         <main className="relative min-h-screen bg-slate-50/50">
-            <OrderModal 
+            <OrderModal
                 product={selectedProduct} 
                 onClose={() => setSelectedProduct(null)} 
+                dict={dictionary} 
             />
 
             <div 
@@ -33,22 +41,25 @@ export function ProductList() {
             <div className="relative z-10 max-w-7xl mx-auto px-4 py-20">
                 <div className="mb-12 text-center">
                     <h1 className="text-3xl font-black text-slate-900 uppercase tracking-widest">
-                        Nos Produits Frais
+                        {dictionary.preCommande.footer.whyChooseUs.title}
                     </h1>
                     <div className="w-12 h-1 bg-green-500 mx-auto mt-2 rounded-full" />
 
                     <div className="flex flex-wrap justify-center gap-3 mt-10">
-                        {categories.map((cat) => (
+                        {categories.map((catKey) => (
                             <button
-                                key={cat}
-                                onClick={() => setSelectedCategory(cat)}
+                                key={catKey}
+                                onClick={() => setSelectedCategory(catKey)}
                                 className={`px-6 py-2 rounded-full text-[10px] font-bold uppercase tracking-widest transition-all duration-300 border ${
-                                    selectedCategory === cat
+                                    selectedCategory === catKey
                                         ? 'bg-green-600 text-white border-green-600 shadow-lg shadow-green-200'
                                         : 'bg-white text-slate-500 border-slate-200 hover:border-green-400 hover:text-green-600'
                                 }`}
                             >
-                                {cat}
+                                {catKey === 'all' 
+                                    ? (dictionary.nav.home === 'Accueil' ? 'Tous' : 'Rehetra') 
+                                    : categoryDict[catKey as keyof typeof categoryDict]
+                                }
                             </button>
                         ))}
                     </div>
@@ -60,6 +71,7 @@ export function ProductList() {
                             key={item.id} 
                             product={item} 
                             onSelect={(p: any) => setSelectedProduct(p)} 
+                            dict={dictionary}
                         />
                     ))}
                 </div>

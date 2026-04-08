@@ -148,7 +148,20 @@ export const fr = {
       { title: "Garantie Remboursement", desc: "Si perte de récolte", icon: "💰" },
       { title: "Suivi Réel", desc: "Directement du champ", icon: "⚡" }
     ],
-
+    card: {
+      btn_order: "PRÉ-COMMANDER",
+      unit_per_kg: "/ kg"
+    },
+    orderFlow: {
+      steps: {
+        selection: 'Configuration',
+        proforma: 'Ma Facture',
+        payment: 'Paiement',
+        labelSelection: 'Choix',
+        labelProforma: 'Résumé',
+        labelPayment: 'Acompte'
+      }
+    },
     footer: {
       whyChooseUs: {
         title: "Pourquoi nous choisir ?",
@@ -170,6 +183,93 @@ export const fr = {
           quality: {
             title: "Qualité Premium",
             desc: "Chaque commande est vérifiée par nos techniciens avant la livraison."
+          },
+
+          orderFlow: {
+            steps: {
+              selection: 'Configuration',
+              proforma: 'Ma Facture',
+              payment: 'Paiement',
+              labelSelection: 'Choix',
+              labelProforma: 'Résumé',
+              labelPayment: 'Acompte'
+            },
+            footerTagline: 'Iriko Agriculture Durable'
+          },
+
+          payment: {
+            title: "Merci pour votre achat !",
+            confirmation_sent: "Un mail de confirmation est envoyé à",
+            client_ref: "Référence Client",
+            deposit_paid: "Acompte payé",
+            balance_due: "Reste à payer",
+            download_receipt: "Télécharger le reçu",
+            back_home: "Retour à l'accueil",
+            deposit_label: "Acompte à régler (50%)",
+            total_purchase: "Total achat",
+            secure_payment: "Paiement sécurisé",
+            choose_method: "Choisissez votre mode de paiement",
+            account_label: "Compte",
+            ussd_code: "Code USSD",
+            scan_qr: "Scanner QR",
+            btn_transfer_done: "J'ai effectué le transfert",
+            validation_title: "Validation & Coordonnées",
+            placeholder_name: "Nom",
+            placeholder_firstname: "Prénom",
+            placeholder_email: "Email (pour le reçu PDF)",
+            paceholder_numero: "Numéro de téléphone",
+            transaction_id_label: "ID Transaction (Reçu par SMS)",
+            btn_confirm: "Confirmer & Recevoir le reçu"
+          },
+
+          proforma: {
+            invoice_label: "Facture Proforma",
+            volume_label: "Volume de commande",
+            engrais_label: "Type d'engrais",
+            production_site: "Site de production",
+            unit_price: "Prix unitaire",
+            total_to_pay: "Total net à régler",
+            validity_note: "Cette facture proforma est valable 48h. Un acompte de 50% est requis pour valider la production.",
+            btn_back: "Retour",
+            btn_confirm: "Confirmer"
+          },
+
+          selection: {
+            volume_label: "Volume de commande",
+            unit_kg: "KG",
+            net_weight: "Poids Net",
+            min_error: "⚠ Minimum : 5 kg requis",
+            fertilizer_label: "Variété d'engrais",
+            fertilizer_sub: "Fertilisant Premium",
+            origin_label: "Origine de production",
+            btn_generate: "Générer ma facture",
+            btn_incomplete: "Compléter vos choix"
+          }
+        },
+        products: {
+          category: {
+            grains: 'Grains',
+            bredes: 'Brèdes',
+            legumes: 'Légumes',
+            tubercules: 'Tubercules'
+          },
+          name: {
+            haricot_vert: 'Haricot Vert',
+            haricot_rouge: 'Haricot Rouge',
+            haricot_blanc: 'Haricot Blanc',
+            kabaro: 'Kabaro',
+            katsaka: 'Maïs',
+            voanjobory: 'Voanjobory',
+            anandrano: 'Anan-drano',
+            anamamy: 'Anamamy',
+            anatsonga: 'Anatsonga',
+            tomate: 'Tomate',
+            aubergine: 'Aubergine',
+            poivron: 'Poivron',
+            concombre: 'Concombre',
+            carotte: 'Carotte',
+            pdt: 'Pomme de terre',
+            patate_douce: 'Patate douce'
           }
         }
       },

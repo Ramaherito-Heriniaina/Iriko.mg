@@ -22,6 +22,13 @@
       "when": 1775300334776,
       "tag": "0002_lying_human_robot",
       "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1775638751655,
+      "tag": "0003_cold_whiplash",
+      "breakpoints": true
     }
   ]
 }

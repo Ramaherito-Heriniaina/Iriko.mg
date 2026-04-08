@@ -41,7 +41,7 @@ export function ProductList() {
             <div className="relative z-10 max-w-7xl mx-auto px-4 py-20">
                 <div className="mb-12 text-center">
                     <h1 className="text-3xl font-black text-slate-900 uppercase tracking-widest">
-                        {dictionary.preCommande.footer.whyChooseUs.title}
+                        {dictionary.preCommande.footer.whyChooseUs.products.title2}
                     </h1>
                     <div className="w-12 h-1 bg-green-500 mx-auto mt-2 rounded-full" />
 

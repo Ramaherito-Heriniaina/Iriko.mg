@@ -249,6 +249,7 @@ export const mg: Dictionary = {
           }
         },
         products: {
+          title2: 'Ny vokatray',
           category: {
             grains: 'Voamaina',
             bredes: 'Anana',

@@ -247,6 +247,7 @@ export const fr = {
           }
         },
         products: {
+          title2: "Nos Produits",
           category: {
             grains: 'Grains',
             bredes: 'Brèdes',

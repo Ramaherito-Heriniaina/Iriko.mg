@@ -1,4 +1,10 @@
 export const fr = {
+
+   auth: {
+    registerClient: 'Inscription Client',
+    registerAdmin: 'Espace Admin',
+  },
+
   nav: {
     home: 'Accueil',
     services: 'Formation & Animation',

@@ -1,6 +1,12 @@
 import { Dictionary } from './fr';
 
 export const mg: Dictionary = {
+
+   auth: {
+    registerClient: 'Hisoratra anarana', 
+    registerAdmin: 'Sehatry ny Admin',    
+  },
+
   nav: {
     home: 'Fandraisana',
     services: 'Famolavolana & Fampiofanana',

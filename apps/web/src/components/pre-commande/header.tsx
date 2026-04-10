@@ -1,11 +1,12 @@
 'use client';
 
 import React, { useState } from 'react';
-import { X, Globe } from 'lucide-react';
+import { X } from 'lucide-react';
 import Image from 'next/image';
 import { useDictionary } from '@/hooks/use-dictionary';
 import { Dictionary } from '@/i18n/dictionaries/fr';
 import { usePathname, useRouter } from 'next/navigation';
+import { RegistrationSection } from '@/components/pre-commande/registrationSection';
 
 export function HeaderLema() {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -30,6 +31,16 @@ export function HeaderLema() {
     return (
         <div className="relative w-full overflow-hidden bg-slate-100 mb-16">
             
+            <div className="absolute top-6 left-6 z-50">
+                <Image 
+                    src="/image/iriko_logo-removebg-preview.png"
+                    alt="Iriko.mg Logo"
+                    width={120}
+                    height={40}
+                    className="h-auto w-auto"
+                />
+            </div>
+
             <div className="absolute top-6 right-6 z-50 flex items-center gap-2">
                 <div className="bg-white/80 backdrop-blur-md p-1 rounded-full shadow-sm border border-slate-200 flex items-center">
                     <button 
@@ -102,6 +113,10 @@ export function HeaderLema() {
                             </div>
                         </div>
                     </div>
+                </div>
+           
+                <div className="mt-12 flex justify-center w-full">
+                    <RegistrationSection dict={dict} />
                 </div>
             </div>
 

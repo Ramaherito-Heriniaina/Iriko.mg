@@ -121,6 +121,185 @@ export const fr = {
       }
     ]
   },
+  preCommande: {
+    hero: {
+      badge: "Produits 100% Bio",
+      title: "Exotic Vegetables",
+      subtitle: "ORGANIC",
+      quote: "De la terre à votre table, contrôlez votre production en choisissant vos propres paramètres de culture.",
+      btnDiscover: "Découvrir LEMA",
+      btnView: "Voir les récoltes",
+      qualityBadge: "GARANTIE"
+    },
+    modal: {
+      title: "À propos de LEMA",
+      slogan: "L'Agriculture Intelligente au bout des doigts.",
+      description: "LEMA est une plateforme innovante qui permet à chacun de devenir producteur agricole à distance. Nous combinons la technologie et l'agriculture biologique pour vous offrir un contrôle total sur vos cultures.",
+      points: {
+        transparency: "Transparence : Suivez la croissance de vos légumes en temps réel.",
+        ethics: "Éthique : Des méthodes 100% bio et respectueuses de l'environnement.",
+        local: "Local : Soutenez l'agriculture malgache tout en assurant votre sécurité alimentaire."
+      },
+      btnClose: "J'ai compris"
+    },
+    features: [
+      { title: "Livraison Locale", desc: "Partout à Madagascar", icon: "🚚" },
+      { title: "Paiement Sécurisé", desc: "50% pré-commande", icon: "🛡️" },
+      { title: "Garantie Remboursement", desc: "Si perte de récolte", icon: "💰" },
+      { title: "Suivi Réel", desc: "Directement du champ", icon: "⚡" }
+    ],
+    card: {
+      btn_order: "PRÉ-COMMANDER",
+      unit_per_kg: "/ kg"
+    },
+    orderFlow: {
+      steps: {
+        selection: 'Configuration',
+        proforma: 'Ma Facture',
+        payment: 'Paiement',
+        labelSelection: 'Choix',
+        labelProforma: 'Résumé',
+        labelPayment: 'Acompte'
+      }
+    },
+    footer: {
+      whyChooseUs: {
+        title: "Pourquoi nous choisir ?",
+        description: "De la terre à votre table, un engagement pour une qualité irréprochable et un suivi transparent.",
+        slogan: "Vokatra tsara no tanjonay",
+        features: {
+          fresh: {
+            title: "Toujours Frais",
+            desc: "Récolté à maturité et livré directement depuis nos champs partenaires."
+          },
+          healthy: {
+            title: "Sain & Naturel",
+            desc: "Zéro pesticide chimique, une culture respectueuse de votre santé."
+          },
+          natural: {
+            title: "100% Authentique",
+            desc: "Des semences sélectionnées pour leur goût véritable et leur robustesse."
+          },
+          quality: {
+            title: "Qualité Premium",
+            desc: "Chaque commande est vérifiée par nos techniciens avant la livraison."
+          },
+
+          orderFlow: {
+            steps: {
+              selection: 'Configuration',
+              proforma: 'Ma Facture',
+              payment: 'Paiement',
+              labelSelection: 'Choix',
+              labelProforma: 'Résumé',
+              labelPayment: 'Acompte'
+            },
+            footerTagline: 'Iriko Agriculture Durable'
+          },
+
+          payment: {
+            title: "Merci pour votre achat !",
+            confirmation_sent: "Un mail de confirmation est envoyé à",
+            client_ref: "Référence Client",
+            deposit_paid: "Acompte payé",
+            balance_due: "Reste à payer",
+            download_receipt: "Télécharger le reçu",
+            back_home: "Retour à l'accueil",
+            deposit_label: "Acompte à régler (50%)",
+            total_purchase: "Total achat",
+            secure_payment: "Paiement sécurisé",
+            choose_method: "Choisissez votre mode de paiement",
+            account_label: "Compte",
+            ussd_code: "Code USSD",
+            scan_qr: "Scanner QR",
+            btn_transfer_done: "J'ai effectué le transfert",
+            validation_title: "Validation & Coordonnées",
+            placeholder_name: "Nom",
+            placeholder_firstname: "Prénom",
+            placeholder_email: "Email (pour le reçu PDF)",
+            paceholder_numero: "Numéro de téléphone",
+            transaction_id_label: "ID Transaction (Reçu par SMS)",
+            btn_confirm: "Confirmer & Recevoir le reçu"
+          },
+
+          proforma: {
+            invoice_label: "Facture Proforma",
+            volume_label: "Volume de commande",
+            engrais_label: "Type d'engrais",
+            production_site: "Site de production",
+            unit_price: "Prix unitaire",
+            total_to_pay: "Total net à régler",
+            validity_note: "Cette facture proforma est valable 48h. Un acompte de 50% est requis pour valider la production.",
+            btn_back: "Retour",
+            btn_confirm: "Confirmer"
+          },
+
+          selection: {
+            volume_label: "Volume de commande",
+            unit_kg: "KG",
+            net_weight: "Poids Net",
+            min_error: "⚠ Minimum : 5 kg requis",
+            fertilizer_label: "Variété d'engrais",
+            fertilizer_sub: "Fertilisant Premium",
+            origin_label: "Origine de production",
+            btn_generate: "Générer ma facture",
+            btn_incomplete: "Compléter vos choix"
+          }
+        },
+        products: {
+          title2: "Nos Produits",
+          category: {
+            grains: 'Grains',
+            bredes: 'Brèdes',
+            legumes: 'Légumes',
+            tubercules: 'Tubercules'
+          },
+          name: {
+            haricot_vert: 'Haricot Vert',
+            haricot_rouge: 'Haricot Rouge',
+            haricot_blanc: 'Haricot Blanc',
+            kabaro: 'Kabaro',
+            katsaka: 'Maïs',
+            voanjobory: 'Voanjobory',
+            anandrano: 'Anan-drano',
+            anamamy: 'Anamamy',
+            anatsonga: 'Anatsonga',
+            tomate: 'Tomate',
+            aubergine: 'Aubergine',
+            poivron: 'Poivron',
+            concombre: 'Concombre',
+            carotte: 'Carotte',
+            pdt: 'Pomme de terre',
+            patate_douce: 'Patate douce'
+          }
+        }
+      },
+      brand: {
+        name: "LEMA",
+        description: "LEMA est votre plateforme de pré-commande directe, établissant un lien transparent entre consommateurs et producteurs locaux."
+      },
+      newsletter: {
+        title: "Newsletter",
+        desc: "Restez informé des prochaines périodes de récoltes.",
+        placeholder: "Votre adresse email",
+        btn: "S'inscrire"
+      },
+      hours: {
+        title: "Horaires",
+        weekdays: { label: "Lundi - Vendredi", time: "8h00 - 18h00" },
+        saturday: { label: "Samedi", time: "8h00 - 12h00" },
+        sunday: { label: "Dimanche", time: "Fermé" }
+      },
+      contact: {
+        title: "Contactez-nous",
+        location: "Lot A 17 F, Ambohitrarahaba, Antananarivo 103, Madagascar",
+        phone: "261 34 913 7059 / +261 34 385 8543  ",
+        email: "irikomg@iriko.org"
+      },
+      copyright: "© 2026 Plateforme LEMA - Tous droits réservés."
+    }
+  },
+
   footer: {
     tagline: '« Vokatra Tsara no tanjonay »',
     mission:
@@ -131,7 +310,7 @@ export const fr = {
     },
     copyright: 'Excellence & Durabilité',
     tags: ['Madagascar', 'Écotourisme'],
-  },
+  }
 };
 
 export type Dictionary = typeof fr;

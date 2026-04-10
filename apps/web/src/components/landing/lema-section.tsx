@@ -5,12 +5,15 @@ import { Sprout, MapPin, UtensilsCrossed, ChevronRight, Leaf, Eye } from 'lucide
 import { useDictionary } from '@/hooks/use-dictionary';
 import { Dictionary } from '@/i18n/dictionaries/fr';
 import Image from 'next/image';
+import { useParams } from 'next/navigation';
+import Link from 'next/link';
 
 const STEP_ICONS = [Sprout, MapPin, UtensilsCrossed];
 
 export function LemaSection() {
     const { dictionary } = useDictionary<Dictionary>();
     const [hoveredStep, setHoveredStep] = useState<number | null>(null);
+    const { locale } = useParams();
 
     if (!dictionary) return null;
 
@@ -30,25 +33,25 @@ export function LemaSection() {
                 <svg width="100%" height="100%">
                     <defs>
                         <pattern id="leaf-pattern" width="80" height="80" patternUnits="userSpaceOnUse">
-                            <path d="M40 0C40 22.0914 22.0914 40 0 40M40 80C40 57.9086 57.9086 40 80 40" stroke="currentColor" strokeWidth="0.5" fill="none"/>
+                            <path d="M40 0C40 22.0914 22.0914 40 0 40M40 80C40 57.9086 57.9086 40 80 40" stroke="currentColor" strokeWidth="0.5" fill="none" />
                         </pattern>
                     </defs>
-                    <rect width="100%" height="100%" fill="url(#leaf-pattern)" className="text-green-700"/>
+                    <rect width="100%" height="100%" fill="url(#leaf-pattern)" className="text-green-700" />
                 </svg>
             </div>
 
             <div className="container mx-auto px-6 relative z-10">
                 <div className="flex flex-col lg:flex-row items-center gap-16">
-                    
+
                     <div className="w-full lg:w-1/2 relative group">
-                        <div 
+                        <div
                             className="relative rounded-3xl p-4 bg-slate-100 dark:bg-slate-900 border-2 border-slate-200 dark:border-slate-800 shadow-xl transition-all duration-500 ease-out"
                             style={{ transform: getImageTransform() }}
                         >
                             <div className="relative rounded-2xl overflow-hidden aspect-[5/3] shadow-inner bg-slate-200">
-                                <Image 
-                                    src="/image/lema.png" 
-                                    alt="LEMA Platform Preview" 
+                                <Image
+                                    src="/image/lema.png"
+                                    alt="LEMA Platform Preview"
                                     fill
                                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                                 />
@@ -82,8 +85,8 @@ export function LemaSection() {
                             {steps.map((step, index) => {
                                 const Icon = STEP_ICONS[index];
                                 return (
-                                    <div 
-                                        key={index} 
+                                    <div
+                                        key={index}
                                         className="flex gap-6 p-5 rounded-2xl bg-slate-50 dark:bg-slate-900 transition-all shadow-sm border border-slate-100 dark:border-slate-800 hover:border-green-200 dark:hover:border-green-900 group cursor-pointer"
                                         onMouseEnter={() => setHoveredStep(index)}
                                         onMouseLeave={() => setHoveredStep(null)}
@@ -105,10 +108,13 @@ export function LemaSection() {
                         </div>
 
                         <div className="pt-6 text-center sm:text-left">
-                            <button className="inline-flex items-center px-10 py-5 bg-green-600 hover:bg-green-700 text-white font-extrabold text-lg rounded-full transition-all transform hover:scale-105 shadow-lg group">
+                            <Link
+                                href={`/${locale}/pre-commande`}
+                                className="inline-flex items-center px-10 py-5 bg-green-600 hover:bg-green-700 text-white font-extrabold text-lg rounded-full transition-all transform hover:scale-105 shadow-lg group"
+                            >
                                 {cta}
                                 <ChevronRight className="ml-3 w-6 h-6 group-hover:translate-x-1.5 transition-transform" />
-                            </button>
+                            </Link>
                         </div>
                     </div>
 

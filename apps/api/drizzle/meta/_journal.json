@@ -5,8 +5,15 @@
     {
       "idx": 0,
       "version": "7",
-      "when": 1773234236585,
-      "tag": "0000_heavy_genesis",
+      "when": 1773751298536,
+      "tag": "0000_noisy_micromacro",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1774249697024,
+      "tag": "0001_striped_puppet_master",
       "breakpoints": true
     }
   ]

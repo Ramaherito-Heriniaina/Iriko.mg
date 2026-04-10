@@ -1,12 +1,12 @@
 import 'dotenv/config';
 import { drizzle } from 'drizzle-orm/node-postgres';
-import { sql } from 'drizzle-orm';
 import { Pool } from 'pg';
 import { schema } from '@/db/schema';
+import { env } from '@/common/utils';
 
 const pool = new Pool(
     {
-        connectionString : process.env.DATABASE_URL,
+        connectionString : env.DATABASE_URL,
         max: 20,
         connectionTimeoutMillis: 10000,
         idleTimeoutMillis :  30000,
@@ -21,15 +21,3 @@ export const db = drizzle({
 });
 
 export { pool };
-
-//deleted later
-async function testConnexion() {
-    setInterval(async () => {
-        try {
-            await db.execute(sql`SELECT 1`);
-            console.log("Requête envoyée...");
-        } catch (error) {
-            console.error("Erreur lors de la requête :", error);
-        }
-    }, 2000);
-};

@@ -8,6 +8,8 @@ const envSchema = z.object({
   HOST: z.string().nonempty().default('localhost'),
   PORT: z.coerce.number().int().positive().default(8080),
   CORS_ORIGIN: z.string().default('http://localhost:3000'),
+  DATABASE_URL: z.string().url(),
+  JWT_SECRET_KEY: z.string().min(10)
 });
 
 const parsedEnv = envSchema.safeParse(process.env);

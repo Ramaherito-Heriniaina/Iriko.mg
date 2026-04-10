@@ -1,21 +1,108 @@
+import bcrypt from 'bcrypt';
+import { eq } from "drizzle-orm";
+
 import { db } from "@/db";
-import { NewUser } from "./users.types";
 import { users } from "@/db/schema";
+
+import { CreateUserInput, NewUser, UpdateUserInput, UserResponse } from "./users.types";
+
+
 
 export const userService = {
 
-    create: async (user : NewUser) => {
+    findAll: async (): Promise<UserResponse[]> => {
+
         try {
-            const [createdUser] = await db
-            .insert(users)
-            .values(user)
-            .returning();
-            console.log("creatd user in userService",createdUser);
-            
-        }  catch (error) {
-            console.error("cannot create user",error);
-        throw error;
+            const allUsers = await db.query.users.findMany();
+
+            return allUsers.map(user => {
+                const { password, ...userWithoutPassword } = user;
+                return userWithoutPassword
+            })
+
+        } catch (error) {
+            console.error("Error finding all users", error);
+            throw error;
         }
     },
-    
+
+    findById: async (id: string): Promise<UserResponse | null> => {
+        try {
+            const user = await db.query.users.findFirst({
+                where: eq(users.id, id),
+            });
+
+            if (!user) return null;
+            const { password, ...rest } = user;
+            return rest;
+        } catch (error) {
+            console.error('Error finding user by id', error);
+            throw error;
+        }
+    },
+
+    create: async (userData: CreateUserInput): Promise<UserResponse> => {
+        try {
+
+            const hashedPassword = await bcrypt.hash(userData.password, 10);
+
+            const dbData: NewUser = {
+                email: userData.email,
+                password: hashedPassword,
+                name: userData.name,
+                phone: userData.phone,
+                role: 'CLIENT',
+                isActive: true
+            };
+
+            const [createdUser] = await db
+                .insert(users)
+                .values(dbData)
+                .returning();
+
+            if (!createdUser) {
+                throw new Error("user cannot be created")
+            }
+
+            const { password, ...userWithoutPassword } = createdUser;
+
+            return userWithoutPassword;
+
+        } catch (error) {
+            console.error("Error creating user", error);
+            throw error;
+        }
+    },
+
+    update: async (id: string, userData: UpdateUserInput): Promise<UserResponse | null> => {
+        try {
+            const [updatedUser] = await db
+                .update(users)
+                .set({ ...userData, updatedAt: new Date() })
+                .where(eq(users.id, id))
+                .returning();
+
+            if (!updatedUser) return null;
+            const { password, ...userWithoutPassword } = updatedUser;
+            return userWithoutPassword;
+        } catch (error) {
+            console.error('Error updating user', error);
+            throw error;
+        }
+    },
+
+    delete: async (id: string): Promise<boolean> => {
+        try {
+            const [deleted] = await db
+                .update(users)
+                .set({ isActive: false, updatedAt: new Date() })
+                .where(eq(users.id, id))
+                .returning();
+            return !!deleted;
+        } catch (error) {
+            console.error('Error deleting user', error);
+            throw error;
+        }
+    },
+
 }

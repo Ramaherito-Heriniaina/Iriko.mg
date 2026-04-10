@@ -1,6 +1,6 @@
 {
-  "id": "a3cba1d8-7742-40bc-bdfa-f662b02bb6aa",
-  "prevId": "00000000-0000-0000-0000-000000000000",
+  "id": "71f2ea15-d8cb-4133-99f5-f4118abb7562",
+  "prevId": "a3cba1d8-7742-40bc-bdfa-f662b02bb6aa",
   "version": "7",
   "dialect": "postgresql",
   "tables": {
@@ -47,8 +47,8 @@
           "notNull": true,
           "default": "'CLIENT'"
         },
-        "is_acitve": {
-          "name": "is_acitve",
+        "is_active": {
+          "name": "is_active",
           "type": "boolean",
           "primaryKey": false,
           "notNull": true,

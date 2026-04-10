@@ -11,4 +11,5 @@ export {
 
 export const schema = {
     users,
+    products,
 };

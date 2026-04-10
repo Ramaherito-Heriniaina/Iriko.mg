@@ -12,7 +12,7 @@ export type CreateProductInput = z.infer<typeof createProductSchema>;
 export type UpdateProductInput = z.infer<typeof updateProductSchema>;
 
 // Types for API response
-export type ProductResponse = Omit<Product, 'createdAt' | 'updatedAt'>;
+export type ProductResponse = Product;
 
 // Types for ENUM
 export type ProductCategory = typeof productCategoryEnum.enumValues[number];

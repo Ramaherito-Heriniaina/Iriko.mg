@@ -23,10 +23,12 @@
   "devDependencies": {
     "@irikomg/eslint-config": "workspace:^",
     "@irikomg/typescript-config": "workspace:*",
+    "@tailwindcss/postcss": "^4.1.18",
     "@types/node": "^25.1.0",
     "@types/react": "^19.2.10",
     "@types/react-dom": "^19.2.3",
     "eslint": "^9.39.2",
+    "postcss": "^8.5.10",
     "typescript": "^5.9.3"
   }
 }

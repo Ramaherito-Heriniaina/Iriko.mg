@@ -1,17 +1,15 @@
 'use client';
 
 import React, { useState } from 'react';
-import { X } from 'lucide-react';
+import { X, User, ShieldCheck } from 'lucide-react';
 import Image from 'next/image';
 import { useDictionary } from '@/hooks/use-dictionary';
 import { Dictionary } from '@/i18n/dictionaries/fr';
 import { usePathname, useRouter } from 'next/navigation';
-import { RegistrationSection } from '@/components/pre-commande/registrationSection';
 
 export function HeaderLema() {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const { dictionary: dict, locale } = useDictionary<Dictionary>();
-    
 
     const pathname = usePathname();
     const router = useRouter();
@@ -24,15 +22,15 @@ export function HeaderLema() {
 
     const toggleLanguage = (newLocale: string) => {
         const segments = pathname.split('/');
-        segments[1] = newLocale; 
+        segments[1] = newLocale;
         router.push(segments.join('/'));
     };
 
     return (
         <div className="relative w-full overflow-hidden bg-slate-100 mb-16">
-            
+
             <div className="absolute top-6 left-6 z-50">
-                <Image 
+                <Image
                     src="/image/iriko_logo-removebg-preview.png"
                     alt="Iriko.mg Logo"
                     width={120}
@@ -41,22 +39,33 @@ export function HeaderLema() {
                 />
             </div>
 
-            <div className="absolute top-6 right-6 z-50 flex items-center gap-2">
-                <div className="bg-white/80 backdrop-blur-md p-1 rounded-full shadow-sm border border-slate-200 flex items-center">
+
+    
+            <div className="absolute top-6 right-6 z-50 flex flex-col items-center gap-2">
+                <div className="flex items-center gap-2">
                     <button 
-                        onClick={() => toggleLanguage('fr')}
-                        className={`px-3 py-1 rounded-full text-[10px] font-black transition-all ${locale === 'fr' ? 'bg-green-600 text-white' : 'text-slate-400 hover:text-green-600'}`}
+                        onClick={() => router.push(`/${locale}/user`)}
+                        className="bg-white/80 backdrop-blur-md px-4 py-2 rounded-full shadow-sm border border-slate-200 flex items-center gap-2 text-[10px] font-black text-slate-700 hover:text-green-600 transition-all"
                     >
-                        FR
+                        <User className="w-3 h-3" />
+                        ESPACE CLIENT
                     </button>
+
                     <button 
-                        onClick={() => toggleLanguage('mg')}
-                        className={`px-3 py-1 rounded-full text-[10px] font-black transition-all ${locale === 'mg' ? 'bg-green-600 text-white' : 'text-slate-400 hover:text-green-600'}`}
+                        onClick={() => router.push(`/${locale}/admin`)}
+                        className="bg-slate-800/90 backdrop-blur-md px-4 py-2 rounded-full shadow-sm text-white flex items-center gap-2 text-[10px] font-black hover:bg-slate-900 transition-all"
                     >
-                        MG
+                        <ShieldCheck className="w-3 h-3" />
+                        ADMIN
                     </button>
                 </div>
+
+                <div className="bg-white/80 backdrop-blur-md p-1 rounded-full shadow-sm border border-slate-200 flex items-center">
+                    <button onClick={() => toggleLanguage('fr')} className={`px-3 py-1 rounded-full text-[10px] font-black transition-all ${locale === 'fr' ? 'bg-green-600 text-white' : 'text-slate-400 hover:text-green-600'}`}>FR</button>
+                    <button onClick={() => toggleLanguage('mg')} className={`px-3 py-1 rounded-full text-[10px] font-black transition-all ${locale === 'mg' ? 'bg-green-600 text-white' : 'text-slate-400 hover:text-green-600'}`}>MG</button>
+                </div>
             </div>
+
 
             <div
                 className="absolute inset-0 z-0 opacity-40"
@@ -67,7 +76,6 @@ export function HeaderLema() {
 
             <div className="max-w-7xl mx-auto px-4 py-16 md:py-24 relative z-10">
                 <div className="flex flex-col md:flex-row items-center justify-between gap-12">
-
                     <div className="flex-1 text-center md:text-left space-y-6">
                         <div className="inline-block px-4 py-1 rounded-full bg-green-100 text-green-700 text-sm font-bold tracking-widest uppercase">
                             {hero.badge}
@@ -113,10 +121,6 @@ export function HeaderLema() {
                             </div>
                         </div>
                     </div>
-                </div>
-           
-                <div className="mt-12 flex justify-center w-full">
-                    <RegistrationSection dict={dict} />
                 </div>
             </div>
 

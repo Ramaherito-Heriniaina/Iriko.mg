@@ -1,12 +1,5 @@
 import z from 'zod';
 
-export const createUserSchema = z.object({
-  email: z.string().email('Invalid email'),
-  password: z.string().min(8, 'Password too short'),
-  name: z.string().min(1, 'Name is required'),
-  phone: z.string().min(1, 'Phone is required'),
-});
-
 export const updateUserSchema = z
   .object({
     name: z.string().min(1).optional(),

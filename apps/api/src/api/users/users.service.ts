@@ -1,10 +1,9 @@
-import bcrypt from 'bcrypt';
 import { eq } from "drizzle-orm";
 
 import { db } from "@/db";
 import { users } from "@/db/schema";
 
-import { CreateUserInput, NewUser, UpdateUserInput, UserResponse } from "./users.types";
+import { UpdateUserInput, UserResponse } from "./users.types";
 
 
 
@@ -37,39 +36,6 @@ export const userService = {
             return rest;
         } catch (error) {
             console.error('Error finding user by id', error);
-            throw error;
-        }
-    },
-
-    create: async (userData: CreateUserInput): Promise<UserResponse> => {
-        try {
-
-            const hashedPassword = await bcrypt.hash(userData.password, 10);
-
-            const dbData: NewUser = {
-                email: userData.email,
-                password: hashedPassword,
-                name: userData.name,
-                phone: userData.phone,
-                role: 'CLIENT',
-                isActive: true
-            };
-
-            const [createdUser] = await db
-                .insert(users)
-                .values(dbData)
-                .returning();
-
-            if (!createdUser) {
-                throw new Error("user cannot be created")
-            }
-
-            const { password, ...userWithoutPassword } = createdUser;
-
-            return userWithoutPassword;
-
-        } catch (error) {
-            console.error("Error creating user", error);
             throw error;
         }
     },

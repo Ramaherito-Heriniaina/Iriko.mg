@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { userService } from "./users.service";
-import { CreateUserInput, UpdateUserInput, NewUser } from "./users.types"
+import { UpdateUserInput} from "./users.types"
 import { StatusCodes } from "http-status-codes";
 
 export const userController = {
@@ -39,36 +39,6 @@ export const userController = {
                 success: false,
                 error: 'Error fetching user',
             });
-        }
-    },
-
-    create: async (req: Request<{}, {}, CreateUserInput>, res: Response) => {
-
-        try {
-
-            const userData: CreateUserInput = req.body;
-
-            const newCreatedUser = await userService.create(userData);
-
-            res.status(StatusCodes.CREATED).json({
-                success: true,
-                data: newCreatedUser,
-                message: "User created successfully"
-            });
-        } catch (error: any) {
-
-            if (error.code === '23505') {
-                return res.status(StatusCodes.CONFLICT).json({
-                    success: false,
-                    error: "Email already exists"
-                })
-            };
-
-            res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
-                success: false,
-                error: "Error creating user"
-            });
-
         }
     },
 

@@ -4,7 +4,7 @@ import { eq, or } from 'drizzle-orm';
 
 import { db } from '@/db';
 import { users } from '@/db/schema';
-import { NewUser, UserResponse } from '../users/users.types';
+import { NewUser } from '../users/users.types';
 import { RegisterInput, LoginInput, TokenPayload, AuthResponse } from './auth.types';
 import { generateToken } from './auth.utils';
 
@@ -59,7 +59,6 @@ export const authService = {
             const user = await db.query.users.findFirst({
                 where: or(
                     'email' in data ? eq(users.email, data.email) : undefined,
-                    'name' in data ? eq(users.name, data.name) : undefined,
                     'phone' in data ? eq(users.phone, data.phone) : undefined
                 ),
             });
@@ -89,22 +88,6 @@ export const authService = {
             };
         } catch (error) {
             console.error('Error logging in', error);
-            throw error;
-        }
-    },
-
-    me: async (id: string): Promise<UserResponse | null> => {
-        try {
-            const user = await db.query.users.findFirst({
-                where: eq(users.id, id),
-            });
-
-            if (!user || !user.isActive) return null;
-
-            const { password, ...userWithoutPassword } = user;
-            return userWithoutPassword;
-        } catch (error) {
-            console.error('Error fetching me', error);
             throw error;
         }
     },

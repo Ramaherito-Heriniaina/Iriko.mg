@@ -1,5 +1,6 @@
 import { userRoleEnum, users } from "@/db/schema/users";
 import { products, productCategoryEnum, productUnitEnum } from "@/db/schema/products";
+import { cities } from "./cities";
 
 export {
     userRoleEnum,
@@ -7,9 +8,11 @@ export {
     products,
     productCategoryEnum,
     productUnitEnum,
+    cities,
 };
 
 export const schema = {
     users,
     products,
+    cities,
 };

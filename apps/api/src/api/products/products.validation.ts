@@ -11,7 +11,7 @@ export const createProductSchema = z.object({
   minOrderQuantity: z.number().int().positive().default(1),
   maxOrderQuantity: z.number().int().positive().default(100),
   productionPeriodDays: z.number().int().positive().default(7),
-  imageUrl: z.string().url().optional(),
+  imageUrl: z.string().optional(),
   isAvailable: z.boolean().default(true),
 });
 

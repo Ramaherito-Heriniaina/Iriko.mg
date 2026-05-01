@@ -8,13 +8,15 @@ import { createProductSchema, updateProductSchema } from './products.validation'
 
 const productRouter: Router = Router();
 
+// Admin only - static routes first to avoid conflict with /:id
+productRouter.get('/admin/all', requireAuth, requireAdmin, productController.findAllAdmin);
+productRouter.get('/admin/:id', requireAuth, requireAdmin, productController.findByIdAdmin);
+
 // Public
 productRouter.get('/', productController.findAll);
 productRouter.get('/:id', productController.findById);
 
-// Admin seulement
-productRouter.get('/admin/all', requireAuth, requireAdmin, productController.findAllAdmin);
-productRouter.get('/admin/:id', requireAuth, requireAdmin, productController.findByIdAdmin);
+// Admin only - write operations
 productRouter.post('/', requireAuth, requireAdmin, validate(createProductSchema), productController.create);
 productRouter.put('/:id', requireAuth, requireAdmin, validate(updateProductSchema), productController.update);
 productRouter.delete('/:id', requireAuth, requireAdmin, productController.delete);

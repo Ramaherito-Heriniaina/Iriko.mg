@@ -1,7 +1,15 @@
-import { users,userRoleEnum } from "@/db/schema/users";
+import { userRoleEnum, users } from "@/db/schema/users";
+import { products, productCategoryEnum, productUnitEnum } from "@/db/schema/products";
 
-export {userRoleEnum, users};
+export {
+    userRoleEnum,
+    users,
+    products,
+    productCategoryEnum,
+    productUnitEnum,
+};
 
 export const schema = {
     users,
+    products,
 };

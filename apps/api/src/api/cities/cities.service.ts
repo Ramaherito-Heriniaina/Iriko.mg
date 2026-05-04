@@ -52,6 +52,13 @@ export const cityService = {
 
     create: async (data: CreateCityInput): Promise<CityResponse> => {
         try {
+
+            const existing = await db.query.cities.findFirst({
+                where: eq(cities.name, data.name),
+            });
+
+            if (existing) throw { code: '23505' };
+
             const newCity: NewCity = {
                 name: data.name,
                 region: data.region,

@@ -11,6 +11,7 @@ import authRouter from '@/api/auth/auth.route';
 import meRouter from '@/api/me/me.route';
 import productRouter from '@/api/products/products.route';
 import cityRouter from '@/api/cities/cities.route';
+import fertilizerRouter from './api/fertilizers/fertilizers.route';
 
 const logger = pino({ name: 'server start' });
 const app: Express = express();
@@ -35,6 +36,7 @@ app.use('/auth', authRouter);
 app.use('/me', meRouter);
 app.use('/products', productRouter);
 app.use('/cities', cityRouter);
+app.use('/fertilizers', fertilizerRouter);
 
 app.use(ErrorHandler());
 

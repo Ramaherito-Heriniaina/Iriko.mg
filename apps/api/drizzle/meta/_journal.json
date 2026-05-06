@@ -29,6 +29,13 @@
       "when": 1775638751655,
       "tag": "0003_cold_whiplash",
       "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1777872282943,
+      "tag": "0004_brave_the_enforcers",
+      "breakpoints": true
     }
   ]
 }
